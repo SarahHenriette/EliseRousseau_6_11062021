@@ -1,0 +1,16 @@
+.header-btnTags {
+    padding: 3px 7px;
+    border: 0.5px solid $greymedium;
+    border-radius: 2em;
+    color: $primaryColor;
+    font-size: 0.75em;
+    font-weight: 500;
+    line-height: 1em;
+    transition: background-color ease-in-out .3s;
+    margin-right: 5px;
+    &:hover, &:focus {
+        background-color: $primaryColor;
+        color: white;
+        border-color: $primaryColor;
+    }
+}
