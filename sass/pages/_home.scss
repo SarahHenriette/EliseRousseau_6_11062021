@@ -18,7 +18,6 @@
         align-items: center;
     }
     &-nav ul {
-     
         display: flex;
         flex-wrap: wrap;
         & li {
@@ -36,9 +35,38 @@
 }
 
 .main {
-    &-photographsList {
-        height: 500px;
+    .photographsList {
+        height: auto;
         background-color: green;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &-photograph {
+            background-color: red;
+            width: 30%;
+            height: 356px;
+            margin-bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &-photograph_header {
+            width: 100%;
+            height: 277px;
+            background-color: blue;
+        }
+        &-photograph_body {
+            width: 100%;
+            height: 38px;
+            background-color: yellow;
+        }
+        &-photograph_footer {
+            width: 100%;
+            height: 30px;
+            background-color: black;
+        }
     }
 }
 
