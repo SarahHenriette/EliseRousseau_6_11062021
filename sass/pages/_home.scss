@@ -40,9 +40,15 @@
         width: 90%;
         margin: auto;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         flex-wrap: wrap;
         margin-top: 2%;
+        .inactive {
+            display: none;
+        }
+        .active {
+            display: flex;
+        }
         // &-photograph {
         //     background-color: white;
         //     width: 30%;

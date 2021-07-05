@@ -41,23 +41,6 @@ a {
   border-color: #901C1C;
 }
 
-.btnTags {
-  padding: 3px 7px;
-  border: 0.5px solid #C4C4C4;
-  border-radius: 2em;
-  color: #901C1C;
-  font-size: 0.75em;
-  font-weight: 500;
-  line-height: 1em;
-  transition: background-color ease-in-out 0.3s;
-  margin: 5px;
-}
-.btnTags:hover, .btnTags:focus {
-  background-color: #901C1C;
-  color: white;
-  border-color: #901C1C;
-}
-
 .photograph {
   background-color: white;
   width: 30%;
@@ -163,9 +146,14 @@ a {
   width: 90%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 2%;
+}
+.main .photographsList .inactive {
+  display: none;
+}
+.main .photographsList .active {
+  display: flex;
 }
 
 @media screen and (max-width: 1100px) {

@@ -55,9 +55,9 @@ function createCard (dataPhotograph){
 
     //integration des tags dans le footer
     dataPhotograph.tags.forEach(tag => {
-        console.log(tag)
-        let t = document.createElement("a")
-        t.setAttribute("href", "#")
+        let t = document.createElement("span")
+        // t.setAttribute("href", "#")
+        t.setAttribute("aria-label", tag)
         t.classList.add("btnTags")
         t.innerHTML = "#" + tag
         photographFooter.appendChild(t)
