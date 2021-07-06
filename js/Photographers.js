@@ -1,6 +1,7 @@
-let json = "../data.json"
+import {CreateCard} from "./CreateCard.js"
 
-fetch(json).then((res)=>{ 
+//recup des donnes json
+fetch("../data.json").then((res)=>{ 
     if (res.ok) {
         return res.json()
     }else {
@@ -8,70 +9,81 @@ fetch(json).then((res)=>{
     }
 }).then(data => {
       data.photographers.forEach(dataPhotograph => {
-        createCard(dataPhotograph)
+        new CreateCard(dataPhotograph)
       });
   
 }).catch((err) => {
     console.log(err)
 })
 
-function createCard (dataPhotograph){
-    //récuperation du conteneur des cards photographes
-    const main = document.querySelector(".photographsList")
+// class CreateCard {
+//     constructor(data){
+//         this.dataPhotograph = data
+//         this.main = document.querySelector(".photographsList")
+//         this.photograph = document.createElement('a')
+//         this.photographHeader = document.createElement('header') 
+//         this.photographContainImage = document.createElement('div')
+//         this.photographImage = document.createElement('img')
+//         this.photographName = document.createElement('h2')
+//         this.photographBody = document.createElement('body') 
+//         this.photographCity= document.createElement('p') 
+//         this.photographSlogan= document.createElement('p') 
+//         this.photographPrice= document.createElement('p') 
+//         this.photographFooter = document.createElement('ul') 
+//         this.attributionClass()
+//         this.attributionAttribute()
+//         this.integrationTextElement()
+//         this.integrationTagFooter()
+//         this.rattachElementDOM()
 
-    //créations des éléments pour créer les cards des photographes
-    let photograph = document.createElement('a')
-    let photographHeader = document.createElement('header') 
-    let photographContainImage = document.createElement('div')
-    let photographImage = document.createElement('img')
-    let photographName = document.createElement('h2')
-    let photographBody = document.createElement('body') 
-    let photographCity= document.createElement('p') 
-    let photographSlogan= document.createElement('p') 
-    let photographPrice= document.createElement('p') 
-    let photographFooter = document.createElement('footer') 
+//     }
 
-    //attributions des class aux éléments
-    photograph.classList.add("photograph")
-    photographHeader.classList.add("photograph-header")
-    photographContainImage.classList.add("photograph-header_image")
-    photographName.classList.add("photograph-header_title")
-    photographBody.classList.add("photograph-body")
-    photographCity.classList.add("photograph-body_city")
-    photographSlogan.classList.add("photograph-body_job")
-    photographPrice.classList.add("photograph-body_price")
-    photographFooter.classList.add("photograph-footer")
+//     attributionClass(){
+//         this.photograph.classList.add("photograph")
+//         this.photographHeader.classList.add("photograph-header")
+//         this.photographContainImage.classList.add("photograph-header_image")
+//         this.photographName.classList.add("photograph-header_title")
+//         this.photographBody.classList.add("photograph-body")
+//         this.photographCity.classList.add("photograph-body_city")
+//         this.photographSlogan.classList.add("photograph-body_job")
+//         this.photographPrice.classList.add("photograph-body_price")
+//         this.photographFooter.classList.add("photograph-tags") 
+//     }
 
-    //attributiond des attributs
-    photograph.setAttribute("href", "#")
-    photographImage.setAttribute("src", "../img/PhotographIDPhoto/" + dataPhotograph.portrait)
+//     attributionAttribute(){
+//         this.photograph.setAttribute("href", "#")
+//         this.photographImage.setAttribute("src", "../img/PhotographIDPhoto/" + this.dataPhotograph.portrait)
+//     }
 
-    
-    //integration text dans les elements
-    photographName.innerHTML = dataPhotograph.name
-    photographCity.innerHTML = dataPhotograph.city + ", " + dataPhotograph.country
-    photographSlogan.innerHTML = dataPhotograph.tagline
-    photographPrice.innerHTML = dataPhotograph.price + "E/jour" 
+//     integrationTextElement(){
+//         this.photographName.innerHTML = this.dataPhotograph.name
+//         this.photographCity.innerHTML = this.dataPhotograph.city + ", " + this.dataPhotograph.country
+//         this.photographSlogan.innerHTML = this.dataPhotograph.tagline
+//         this.photographPrice.innerHTML = this.dataPhotograph.price + "E/jour" 
+//     }
 
-    //integration des tags dans le footer
-    dataPhotograph.tags.forEach(tag => {
-        let t = document.createElement("span")
-        // t.setAttribute("href", "#")
-        t.setAttribute("aria-label", tag)
-        t.classList.add("btnTags")
-        t.innerHTML = "#" + tag
-        photographFooter.appendChild(t)
-    });
+//     integrationTagFooter(){
+//         this.dataPhotograph.tags.forEach(tag => {
+//             let liSpan = document.createElement("li")
+//             let span = document.createElement("span")
+//             span.setAttribute("aria-label", tag)
+//             span.classList.add("btnTags")
+//             span.innerHTML = "#" + tag
+//             this.photographFooter.appendChild(liSpan)
+//             liSpan.appendChild(span)
+//         });
+//     }
 
-    //rattachement des éléments au DOM 
-    main.appendChild(photograph)
-    photograph.appendChild(photographHeader)
-    photographHeader.appendChild(photographContainImage)
-    photographContainImage.appendChild(photographImage)
-    photographHeader.appendChild(photographName)
-    photograph.appendChild(photographBody)
-    photographBody.appendChild(photographCity)
-    photographBody.appendChild(photographSlogan)
-    photographBody.appendChild(photographPrice)
-    photograph.appendChild(photographFooter)
-}
+//     rattachElementDOM(){
+//         this.main.appendChild(this.photograph)
+//         this.photograph.appendChild(this.photographHeader)
+//         this.photographHeader.appendChild(this.photographContainImage)
+//         this.photographContainImage.appendChild(this.photographImage)
+//         this.photographHeader.appendChild(this.photographName)
+//         this.photograph.appendChild(this.photographBody)
+//         this.photographBody.appendChild(this.photographCity)
+//         this.photographBody.appendChild(this.photographSlogan)
+//         this.photographBody.appendChild(this.photographPrice)
+//         this.photograph.appendChild(this.photographFooter)
+//     }
+// }

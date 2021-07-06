@@ -8,6 +8,7 @@
     line-height: 1em;
     transition: background-color ease-in-out .3s;
     margin: 5px;
+    pointer-events: stroke;
     &:hover, &:focus {
         background-color: $primaryColor;
         color: white;
