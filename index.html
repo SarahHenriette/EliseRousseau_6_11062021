@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="index.html" class="goToContent" aria-label="goToContent" aria-labelledby="main">Passer au contenu</a>
     <header class="header" role="banner">
         <figure class="header-logo"><a href="#"><img src="img/logo.png" alt="Fisheye home page"></a></figure>
-        <nav class="header-nav" aria-label="Navigation photographer categories">
-            <ul>
+        <nav class="header-nav" aria-label="Navigation photographers tags">
+            <ul aria-label="Navigation photographers tags">
                 <li><span class="header-btnTags btnTags" aria-label="portrait">#Portrait</span></li>
                 <li><span class="header-btnTags btnTags" aria-label="art">#Art</span></li>
                 <li><span class="header-btnTags btnTags" aria-label="fashion">#Fashion</span></li>
@@ -23,13 +24,13 @@
         </nav>
         <h1 class="header-title">Nos photographes</h1>
     </header>
-    <main class="main">
+    <main id="homepage">
         <div class="photographsList" id="photographsList" aria-label="Photograph List"></div>
     </main>
-    <!-- <script src="js/CreateCard.js"></script>
-    <script src="js/Photographers.js"></script>
-    <script src="js/Tags.js"></script> -->
+    <script src="js/CreateCard.js"></script>
+    <!-- <script src="js/Photographers.js"></script> -->
+    <script src="js/Tag.js"></script>
 
-    <script src="bundle.js"></script>
+    <!-- <script src="bundle.js"></script> -->
 </body>
 </html>

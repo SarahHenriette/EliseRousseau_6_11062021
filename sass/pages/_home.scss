@@ -1,49 +1,29 @@
-.header {
-    height: 130px;
-    display: grid;
-    grid-template-columns: 20% 50% 25%;
-    grid-template-rows: 1fr;
-    grid-gap: 15px;
-    z-index: 900;
-    padding-left: 7%;
-    &-logo {
-        margin: auto 0;
-        grid-column: 1 /span 1;
-        grid-row: 1/ span 1;
-    }
-    &-nav {
-        grid-column: 2 /span 1;
-        grid-row: 1/ span 1;
-        display: flex; 
-        align-items: center;
-    }
-    &-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        & li {
-            margin-bottom: 10px;
-        }
-    }
-    &-title {
-        grid-column: 3 /span 1;
-        grid-row: 1/ span 1;
-        color: $primaryColor;
-        font-size: 2em;
-        font-weight: normal;
-        margin: auto 0;
-    }
-}
-
-.main {
+#homepage {
     .photographsList {
         height: auto;
         width: 90%;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin-top: 2%;
-        margin: auto;
+        margin: 3em auto 0 auto
     }
+}
+
+.goToContent {
+    width: 182px;
+    height: 30px;
+    background: #DB8876;
+    border-radius: 5px; 
+    color: #000;
+    font-weight: 700;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 1em;
+    text-align: center;
+    line-height: 1.80em;
+    display: none;
 }
 
 @include tablet-only {

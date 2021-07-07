@@ -1,10 +1,9 @@
-export default class CreateCard {
+class CreateCard {
     constructor(data){
-        console.log(data)
         this.dataPhotograph = data
         this.main = document.querySelector(".photographsList")
-        this.photograph = document.createElement('a')
-        this.photographHeader = document.createElement('header') 
+        this.photograph = document.createElement('article')
+        this.photographHeader = document.createElement('a') 
         this.photographContainImage = document.createElement('div')
         this.photographImage = document.createElement('img')
         this.photographName = document.createElement('h2')
@@ -18,7 +17,6 @@ export default class CreateCard {
         this.integrationTextElement()
         this.integrationTagFooter()
         this.rattachElementDOM()
-
     }
 
     attributionClass(){
@@ -34,7 +32,7 @@ export default class CreateCard {
     }
 
     attributionAttribute(){
-        this.photograph.setAttribute("href", "#")
+        this.photographHeader.setAttribute("href", "../page/photographer.html?id=" + this.dataPhotograph.id)
         this.photographImage.setAttribute("src", "../img/PhotographIDPhoto/" + this.dataPhotograph.portrait)
     }
 
@@ -70,3 +68,16 @@ export default class CreateCard {
         this.photograph.appendChild(this.photographFooter)
     }
 }
+
+//recup des donnes json
+fetch("../data.json").then((res)=>{ 
+    if (res.ok) {
+        return res.json()
+    }
+}).then(data => {
+      data.photographers.forEach(dataPhotograph => {
+        new CreateCard(dataPhotograph)
+      });
+}).catch((err) => {
+    console.log(err)
+})
