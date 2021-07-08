@@ -1,5 +1,4 @@
 .photographerHeader {
-    width: 85%;
     height: 313px;
     background-color: #FAFAFA;
     margin: auto;
@@ -10,7 +9,7 @@
         grid-column: 2/ span 1;
         margin: auto 0;
         &_name {
-            font-size: 3em;
+            font-size: 2.5em;
             font-weight: 400;
             color: $secondaryColor;
         }

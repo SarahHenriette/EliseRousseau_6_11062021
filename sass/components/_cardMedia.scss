@@ -1,0 +1,55 @@
+.media {
+    width: 350px;
+    height: 351px;
+    &-header {
+        width: 350px;
+        height: 300px;
+        overflow: hidden;
+        // background-color: red;
+        &_img {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            // background-color: green;
+
+        }
+        &_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &_video {
+            width: 100%;
+            // height: 300px;
+        }
+        &_video[poster]{
+            width: 350px;
+            height: 300px;
+            // height: 100%;
+        }
+    }
+    &-footer {
+        display: flex;
+        align-items: center;
+        &_name {
+            flex: 1;
+            color: $primaryColor;
+            font-weight: 400;
+        }
+        &_numberLike {
+            color: $primaryColor;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+        &_buttonLike{
+            width: 17.5px;
+            height: 18.35px;
+            background-image: url("../../img/Vector.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 5px;
+        }
+       
+    }
+}

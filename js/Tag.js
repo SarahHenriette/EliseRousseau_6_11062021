@@ -1,22 +1,20 @@
 class Tag {
     constructor(tagEvent, tabSelectCards){
-        console.log(tagEvent)
         this.tag = tagEvent
+        this.tagAriaLabel = this.tag.attributes["aria-label"].value
         this.tabSelectCards = tabSelectCards
         this.main = document.querySelector("#photographsList")
         this.photographCards = this.main.childNodes
-        this.allSameTags = document.querySelectorAll('.btnTags[aria-label='+ this.tag.ariaLabel +']')
+        this.allSameTags = document.querySelectorAll('.btnTags[aria-label='+ this.tagAriaLabel +']')
         this.deleteCardsPhotograph()
         this.activeOrDesactiveTags()
         this.displayOrHidePhotographsCards()
-        console.log(this.allSameTags)
     }
 
     deleteCardsPhotograph(){
         for(let photographCard of this.photographCards) {
             photographCard.style.display = "none"
         }
-        console.log("supprime les cards")
     }
 
     activeOrDesactiveTags(){
@@ -33,8 +31,6 @@ class Tag {
                 this.tabSelectCards.splice(this.tabSelectCards.indexOf(tag.parentNode.parentNode.parentNode),1)
             })
         }
-        console.log("class active")
-
     }
 
     displayOrHidePhotographsCards(){
@@ -47,7 +43,6 @@ class Tag {
                 el.style.display = "flex"
             }
         }        
-        console.log("affiche cards")
     }
 }
 
@@ -70,10 +65,9 @@ class Tag {
             }
         //sinon si l'url contient un parametre tag alors j'affiche les cards contenant le tag
         } else if (regTag.test(window.location.search)) {
-            console.log(document.location)
             let tagAriaLabel = window.location.search.replace(/\?tag=/i, "")//valeur de tag
             let tabSelectCards = []
             let tag = document.querySelector('.btnTags[aria-label="'+ tagAriaLabel +'"]')
             new Tag(tag, tabSelectCards)
         }
-    }, 500);
+    }, 300);

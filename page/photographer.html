@@ -13,15 +13,25 @@
     <main id="photographer">
         <header class= "photographerHeader">
             <section class= "photographerHeader-text">
-                <h1 class= "photographerHeader-text_name">Mimi Keel</h1>
-                <p class= "photographerHeader-text_city">London, UK</p>
-                <p class= "photographerHeader-text_slogan">Voir le beau dans le quotidien</p>
+                <h1 class= "photographerHeader-text_name"></h1>
+                <p class= "photographerHeader-text_city"></p>
+                <p class= "photographerHeader-text_slogan"></p>
                 <ul class="photographerHeader-text_tags"></ul>
             </section>
             <button class="photographerHeader-btn btnContactMe">Contactez-moi</button>
-            <figure class="photographerHeader-img"><img src="../img/PhotographIDPhoto/MimiKeel.jpg" alt=""></figure>
+            <figure class="photographerHeader-img"><img src="" alt=""></figure>
         </header>
+        <label for="sortBy">Trier par</label>
+        <select name="sortBy" id="sortBy">
+            <option value="popularity" selected>Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+        </select>
+
+        <div class="mediasList" id="mediasList" aria-label="Media List"></div>
+
     </main>
+    <!-- <script src="../js/CreateMediaCard.js"></script> -->
     <script src="../js/PhotographersPage.js"></script>
 </body>
 </html>
