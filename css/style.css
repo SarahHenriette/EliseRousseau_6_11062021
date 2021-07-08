@@ -275,6 +275,89 @@ a {
   margin-left: 5px;
 }
 
+#formulaire {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#formulaire form {
+  width: 669px;
+  height: 900px;
+  border-radius: 5px;
+  background-color: #DB8876;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 25px;
+}
+#formulaire form .formulaire-title {
+  font-size: 4em;
+  font-weight: 400;
+}
+#formulaire form #formulaire-namePhotographe {
+  margin-bottom: 19px;
+}
+#formulaire form .formulaire-close {
+  color: #FFF;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+}
+#formulaire form .formData {
+  display: flex;
+  flex-direction: column;
+}
+#formulaire form .formData label {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #312E2E;
+}
+#formulaire form .formData input {
+  border: none;
+  height: 68px;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 1em;
+}
+#formulaire form .formData input:focus-visible, #formulaire form .formData textarea:focus-visible {
+  outline: none;
+}
+#formulaire form .formData textarea {
+  border: none;
+  height: 170px;
+  border-radius: 5px;
+}
+#formulaire form .formData .error {
+  border: solid 2px red;
+}
+#formulaire form .formData .success {
+  border: solid 2px green;
+}
+#formulaire form .formData small {
+  color: red;
+  display: none;
+}
+#formulaire form input[type=submit] {
+  width: 170px;
+  height: 69px;
+  background-color: #901C1C;
+  border-radius: 5px;
+  color: #FFF;
+  margin-top: 26px;
+  border: none;
+}
+
 .header {
   height: 130px;
   display: grid;

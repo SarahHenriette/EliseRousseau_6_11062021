@@ -1,0 +1,83 @@
+#formulaire {
+    width: 100%;
+    height: 100%;
+    background-color:rgba($color: #FFF, $alpha: 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    form {
+        width: 669px;
+        height: 900px;
+        border-radius: 5px;
+        background-color: #DB8876;
+        box-shadow: -5px 10px 10px rgba($color: #000000, $alpha: 0.4);
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        .formulaire-title {
+            font-size: 4em;
+            font-weight: 400;
+        }
+        #formulaire-namePhotographe {
+            margin-bottom: 19px;
+        }
+        .formulaire-close {
+            color: #FFF;
+            position: absolute;
+            right: 35px;
+            top: 35px;
+        }
+        .formData {
+            display: flex;
+            flex-direction: column;
+            label {
+                font-size: 1.5em;
+                margin-top: 10px;
+                color: #312E2E;
+            }
+            input {
+                border: none;
+                height: 68px;
+                border-radius: 5px;
+                padding-left: 20px;
+                font-size: 1em;
+            }
+            input:focus-visible, textarea:focus-visible {
+                outline: none;
+            }
+            textarea {
+                border: none;
+                height: 170px;
+                border-radius: 5px;
+            }
+            .error {
+                border: solid 2px red;
+            }
+            .success {
+                border: solid 2px green;
+            }
+            small {
+                color: red;
+                display: none;
+            }
+        }
+        input[type="submit"]{
+            width: 170px;
+            height: 69px;
+            background-color: $primaryColor;
+            border-radius: 5px;
+            color: #FFF;
+            margin-top: 26px;
+            border: none;
+        }
+    }
+  
+}

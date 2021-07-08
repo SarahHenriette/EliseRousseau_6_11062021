@@ -18,9 +18,40 @@
                 <p class= "photographerHeader-text_slogan"></p>
                 <ul class="photographerHeader-text_tags"></ul>
             </section>
-            <button class="photographerHeader-btn btnContactMe">Contactez-moi</button>
+            <button class="photographerHeader-btn btnContactMe" id="btnContactMe">Contactez-moi</button>
             <figure class="photographerHeader-img"><img src="" alt=""></figure>
         </header>
+        <div class="formulaire" id="formulaire">
+            <form action="">
+                <span class="formulaire-close"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="white"/>
+                    </svg>
+                </span>
+                <p class="formulaire-title">Contactez-moi</p>
+                <p class="formulaire-title" id="formulaire-namePhotographe"></p>
+                <div class="formData">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" class="text-control">
+                    <small class="message-error">Error</small>
+                </div>
+                <div class="formData">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" class="text-control">
+                    <small class="message-error">Error</small>
+                </div>
+                <div class="formData">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="text-control">
+                    <small class="message-error">Error</small>
+                </div>
+                <div class="formData">
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" class="text-control"></textarea>
+                    <small class="message-error">Error</small>
+                </div>
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
         <label for="sortBy">Trier par</label>
         <select name="sortBy" id="sortBy">
             <option value="popularity" selected>Popularité</option>
@@ -31,7 +62,7 @@
         <div class="mediasList" id="mediasList" aria-label="Media List"></div>
 
     </main>
-    <!-- <script src="../js/CreateMediaCard.js"></script> -->
+    <!-- <script src="../js/formulaire.js"></script> -->
     <script src="../js/PhotographersPage.js"></script>
 </body>
 </html>
