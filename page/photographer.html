@@ -52,6 +52,24 @@
                 <input type="submit" value="Envoyer">
             </form>
         </div>
+        <div class="lightboxModal" id="lightboxModal">
+            <div class="lightbox">
+                <span class="lightbox-close"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#911C1C"/>
+                    </svg></span>
+                <span class="lightbox-arrow_left"><svg width="30" height="48" viewBox="0 0 30 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M29.6399 42.36L11.3199 24L29.6399 5.64L23.9999 -2.46532e-07L-0.000107861 24L23.9999 48L29.6399 42.36Z" fill="#911C1C"/>
+                    </svg></span>
+                <span class="lightbox-arrow_right"><svg width="30" height="48" viewBox="0 0 30 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.360108 5.64L18.6801 24L0.360107 42.36L6.00011 48L30.0001 24L6.00011 3.88195e-06L0.360108 5.64Z" fill="#911C1C"/>
+                    </svg>
+                    </span>
+                <div class="lightbox-media_image">
+                    <img src="../img/Mimi/Animals_Rainbow.jpg" alt="">
+                </div>
+                <span class="lightbox-media_name">NAME</span>
+            </div>
+        </div>
         <label for="sortBy">Trier par</label>
         <select name="sortBy" id="sortBy">
             <option value="popularity" selected>Popularité</option>
@@ -62,7 +80,15 @@
         <div class="mediasList" id="mediasList" aria-label="Media List"></div>
 
     </main>
-    <!-- <script src="../js/formulaire.js"></script> -->
-    <script src="../js/PhotographersPage.js"></script>
+    <script type="text/javascript" src="../js/CreateCardHeader.js"></script>
+    <script type="text/javascript" src="../js/CreateMediaCard.js"></script>
+    <script type="text/javascript" src="../js/Formulaire.js"></script>
+    <script type="text/javascript" src="../js/SortBy.js"></script>
+    <script type="text/javascript" src="../js/PhotographersPage.js"></script>
+
+
+
+    <!-- <script src="bundle.js"></script> -->
+
 </body>
 </html>

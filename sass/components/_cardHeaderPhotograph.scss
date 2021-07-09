@@ -29,6 +29,7 @@
             margin: auto;
             padding-top: 25px;
             display: flex;
+            
         }
     }
 
@@ -77,14 +78,22 @@
         &-text {
             grid-column: 1 / span 1;
             margin: 0;
+            &_tags {
+                flex-wrap: wrap;
+                height: auto;
+                li {
+                    margin-bottom: 10px;
+                }
+            }
         }
-        &-btn {
-        }
+        // &-btn {
+        // }
         &-img {   
             grid-column: 2 / span 1;
             width: 100px;
             height: 100px;
             margin: 0;
         }
+      
     }
 }

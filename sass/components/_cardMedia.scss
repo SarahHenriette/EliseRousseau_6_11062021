@@ -19,8 +19,8 @@
             object-fit: cover;
         }
         &_video {
-            width: 100%;
-            // height: 300px;
+            // width: 100%;
+            height: 300px;
         }
         &_video[poster]{
             width: 350px;
@@ -51,5 +51,18 @@
             margin-left: 5px;
         }
        
+    }
+}
+
+@include tablet-only {
+   
+}
+
+@include mobile-only {
+    .media {
+        width: 100%;
+        &-header {
+            width: 100%;
+        }
     }
 }
