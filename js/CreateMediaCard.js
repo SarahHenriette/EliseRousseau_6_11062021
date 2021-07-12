@@ -19,10 +19,6 @@ class CreateMediaCard {
         }else if (this.dataMedia.video){
             this.mediaHeaderVideo = document.createElement('video')
             this.mediaHeaderVideoSrc = document.createElement('source')
-
-            // this.mediaHeaderVideo.setAttribute("controls", "")
-            // this.mediaHeaderVideo.setAttribute("poster", "../img/EllieRose/Sport_Jump.jpg")
-
             this.mediaHeaderVideo.classList.add("media-header_video")
             this.mediaHeaderLinkImage.appendChild(this.mediaHeaderVideo)
             this.mediaHeaderVideo.appendChild(this.mediaHeaderVideoSrc)
@@ -38,6 +34,7 @@ class CreateMediaCard {
         this.attributionAttribute()
         this.integrationTextElement()
         this.rattachElementDOM()
+      
     }
 
     //Attribution des class aux éléments créer

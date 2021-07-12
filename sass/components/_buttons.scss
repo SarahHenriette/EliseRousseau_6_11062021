@@ -35,3 +35,12 @@
     font-size: 1em;
     cursor: pointer;
 }
+
+@include mobile-only {
+.btnContactMe {
+    width: 170px;
+    height: 35px;
+    font-size: 1em;
+}
+
+}

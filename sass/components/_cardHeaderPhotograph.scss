@@ -60,7 +60,11 @@
     .photographerHeader {
         grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
         &-btn {
-            display: none;
+            position: fixed;
+            bottom: 1em;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
         &-img {   
             grid-column: 3 / span 1;

@@ -52,6 +52,24 @@ class Formulaire {
                         element.classList.remove("success")
                     });
         
+                } else {
+                    e.preventDefault()
+                    if(this.firstname.value == ""){
+                        let msgErreur = this.firstname.parentNode.childNodes[5]
+                        this.error(this.firstname, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.", msgErreur)
+                    }
+                    if(this.lastname.value == ""){
+                        let msgErreur = this.lastname.parentNode.childNodes[5]
+                        this.error(this.lastname, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.", msgErreur)
+                    }
+                    if(this.email.value == ""){
+                        let msgErreur = this.email.parentNode.childNodes[5]
+                        this.error(this.email, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.", msgErreur)
+                    }
+                    if(this.message.value == ""){
+                        let msgErreur = this.message.parentNode.childNodes[5]
+                        this.error(this.message, "Veuillez entrer 10 caractères ou plus pour le champ du prénom.", msgErreur)
+                    }
                 }
             })
     }
@@ -70,27 +88,27 @@ class Formulaire {
     }
 
     //verifie les msg d'erreur ou de validation à la saisie du champ 
-    addEvent(first, regex, textMsgErreur){
-        first.addEventListener("keyup", function(){
-            let msgErreur = first.parentNode.childNodes[5]
-            if(regex.test(first.value)) {
-                success(first, msgErreur)
+    addEvent(element, regex, textMsgErreur){
+        element.addEventListener("keyup",()=>{
+            let msgErreur = element.parentNode.childNodes[5]
+            if(regex.test(element.value)) {
+                this.success(element, msgErreur)
             }else {
-                error(first, textMsgErreur, msgErreur )
+                this.error(element, textMsgErreur, msgErreur )
             }
         })
-        function success(element, smallError) {
-            element.classList.add("success")
-            element.classList.remove("error") 
-            smallError.style.display="none" //supprime le msg d'erreur 
-        }
+    }
+    success(element, smallError) {
+        element.classList.add("success")
+        element.classList.remove("error") 
+        smallError.style.display="none" //supprime le msg d'erreur 
+    }
 
-        function error(element, messageError, smallError) {
-            element.classList.add("error")
-            element.classList.remove("success")
-            smallError.style.display="block" //affiche le msg d'erreur 
-            smallError.innerHTML= messageError
-        }
+    error(element, messageError, smallError) {
+        element.classList.add("error")
+        element.classList.remove("success")
+        smallError.style.display="block" //affiche le msg d'erreur 
+        smallError.innerHTML= messageError
     }
 
 }

@@ -1,25 +1,118 @@
 #photographer {
     width: 85%;
     margin: auto;
-    #sortBy {
+    .select {
+        position: relative;
         background-color: $primaryColor;
-        border: none;
-        width: 170px;
-        height: 69px;
-        color: white;
-        font-size: 1em;
+        height: auto;
+        width: 10.5em;
         border-radius: 5px;
+        display: inline-block;
+        margin: 15px 0 15px 15px;
+
+    }
+    .select select {
+        background-color: $primaryColor;
+        font-size: 1.2rem;
+        border: 0;
+        padding: 1em 2em 1em 1.5em;
+        padding-left: 20px;
+        color: white;
+        border-radius: 5px;
+        appearance: none;
+    }
+    .select select:focus-visible { 
+        outline: none;
+    }
+    .select .arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
         display: block;
-        // padding: 20px 25px;
-    }
-    select::after {
-        content:"t";
+        background: $primaryColor;
+        height: 100%;
+        width: auto;
+        pointer-events: none;
+        border-radius: 0 5px 5px 0;
         display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-right: 20px;
+        i {
+            // margin: auto;
+            color: white;
+            // background-color: blue;
+        }
     }
+
+    .select .selector-options {
+        width: 100%;
+        height: 170px;
+        background-color: red;
+        position: absolute;
+        margin: 0;
+        border-radius: 5px;
+        top: 0;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .select .selector-options li {
+        height: 50px;
+        color: white;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border-bottom:  solid 1px white;
+        width: 100%;
+    }
+
+    .select .selector-options li:last-child {
+        border-bottom: none;
+    }
+    option {
+        // appearance: none;
+
+        // height: 150px;
+        // background-color: red;
+        // min-height: 2em!important;
+        // padding: 50px;
+        // display: block;
+        // border: yellow 5px solid;
+        // font-weight: 700;
+        // padding: 50px;
+    }
+    label[for="sortBy"]{
+        font-weight: 700;
+    }
+    // select::after {
+    //     content:"t";
+    //     // display: flex;
+    // }
     #mediasList {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+    }
+
+    .totalLikesAndPricePhotograph {
+        width: 376px;
+        height: 89px;
+        background-color: #DB8876;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: 500;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        i {
+            margin-left: 5px;
+        }
     }
     #lightboxModal {
         width: 100%;
@@ -112,6 +205,9 @@
         }
         #mediasList {
             margin-top: 15%;
+        }
+        .totalLikesAndPricePhotograph {
+            display: none;
         }
     }
 }
