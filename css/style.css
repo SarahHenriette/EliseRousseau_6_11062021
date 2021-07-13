@@ -522,71 +522,72 @@ a {
   width: 85%;
   margin: auto;
 }
-#photographer .select {
-  position: relative;
-  background-color: #901C1C;
+#photographer #dropdown {
+  width: 170px;
   height: auto;
-  width: 10.5em;
-  border-radius: 5px;
+  position: relative;
   display: inline-block;
   margin: 25px 0 25px 15px;
 }
-#photographer .select select {
+#photographer #dropdownButton {
+  width: 170px;
+  height: 69px;
   background-color: #901C1C;
-  font-size: 1.2rem;
-  border: 0;
-  padding: 1em 2em 1em 1.5em;
-  padding-left: 20px;
-  color: white;
-  border-radius: 5px;
-  appearance: none;
+  padding-right: 45px;
+  font-size: 1.2em;
 }
-#photographer .select select:focus-visible {
+#photographer #dropdownButton:focus {
   outline: none;
+  border: none;
+  box-shadow: none;
 }
-#photographer .select .arrow {
+#photographer #dropdownButton:focus ~ span i {
+  transform: rotate(180deg);
+}
+#photographer #dropdownButton:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+#photographer #dropdown .dropdown-arrow {
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
-  display: block;
-  background: #901C1C;
+  width: 2.5em;
   height: 100%;
-  width: auto;
   pointer-events: none;
-  border-radius: 0 5px 5px 0;
   display: flex;
-  justify-content: start;
   align-items: center;
-  margin-right: 20px;
+  z-index: 1000;
 }
-#photographer .select .arrow i {
+#photographer #dropdown .dropdown-arrow i {
   color: white;
+  transform: rotate(0deg);
+  transition: transform 0.3s linear;
 }
-#photographer .select .selector-options {
-  width: 100%;
+#photographer #dropdown .dropdown-menu.show {
+  background-color: #901C1C;
+  width: 170px;
   height: 170px;
-  background-color: red;
-  position: absolute;
-  margin: 0;
-  border-radius: 5px;
-  top: 0;
-  padding: 0 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  transform: translate3d(0px, 0px, 0px) !important;
+  padding: 7px;
 }
-#photographer .select .selector-options li {
-  height: 50px;
-  color: white;
+#photographer #dropdown .dropdown-menu.show li {
+  height: 52px;
   display: flex;
-  justify-content: start;
   align-items: center;
-  border-bottom: solid 1px white;
-  width: 100%;
+  border-bottom: 1px solid white;
 }
-#photographer .select .selector-options li:last-child {
+#photographer #dropdown .dropdown-menu.show li:last-child {
   border-bottom: none;
+}
+#photographer #dropdown .dropdown-menu.show li a {
+  color: white;
+  font-size: 1.2em;
+}
+#photographer #dropdownButton::after {
+  display: none;
 }
 #photographer label[for=sortBy] {
   font-weight: 700;

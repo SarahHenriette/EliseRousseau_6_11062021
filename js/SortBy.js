@@ -2,8 +2,10 @@ class sortBy {
     constructor( listMedias, namePhotographe) {
         this.listMedias =  listMedias
         this.namePhotographe = namePhotographe
-        this.select = document.getElementById("sortBy")
+        this.select = document.getElementById("dropdown")
         this.media = document.querySelectorAll(".media")
+        this.dropdown = document.querySelectorAll(".dropdown-item")
+        this.dropdownBtn = document.getElementById("dropdownButton")
         this.displayMedias()
     }
     
@@ -12,32 +14,39 @@ class sortBy {
         let tabTitle 
         let tabPopularity 
         let tabDate
-        this.select.addEventListener("change", (e)=> {
-            let value = e.target.value
-            if(value == "popularity") {
-                //trie du tableau contenant tout les medias par popularité
-                tabPopularity  = this.listMedias.sort(function(a,b){
-                    return a.likes - b.likes;
-                })
-                this.changeMedias(tabPopularity.reverse())
-                new Lightbox(this.namePhotographe, tabPopularity)
-            }else if (value == "date"){
-                //trie du tableau contenant tout les medias par date
-                tabDate = this.listMedias.sort(function(a,b){
-                    return a.date.localeCompare(b.date)
-                })
-                this.changeMedias(tabDate.reverse())
-                new Lightbox(this.namePhotographe, tabDate)
+        this.dropdown.forEach(element => {
+            element.addEventListener("click", (e)=> {
+                // console.log(this.select.querySelector(".dropdown-arrow"))
+                let value = e.target.attributes["aria-label"].value
+                console.log(value)
+                if(value == "popularity"){
+                    this.dropdownBtn.innerHTML = "Popularité"
+                    //trie du tableau contenant tout les medias par popularité
+                    tabPopularity  = this.listMedias.sort(function(a,b){
+                        return a.likes - b.likes;
+                    })
+                    this.changeMedias(tabPopularity.reverse())
+                    new Lightbox(this.namePhotographe, tabPopularity)
 
-            }else if (value == "title") {
-                //trie du tableau contenant tout les medias par titre
-                tabTitle = this.listMedias.sort(function(a,b){
-                    return a.title.localeCompare(b.title)
-                })
-                this.changeMedias(tabTitle)
-                new Lightbox(this.namePhotographe, tabTitle)
-            }
-        })
+                }else if (value == "date"){
+                    this.dropdownBtn.innerHTML = "Date"
+                    //trie du tableau contenant tout les medias par date
+                    tabDate = this.listMedias.sort(function(a,b){
+                        return a.date.localeCompare(b.date)
+                    })
+                    this.changeMedias(tabDate.reverse())
+                    new Lightbox(this.namePhotographe, tabDate)
+                }else if (value == "title") {
+                    this.dropdownBtn.innerHTML = "Titre"
+                    //trie du tableau contenant tout les medias par titre
+                    tabTitle = this.listMedias.sort(function(a,b){
+                        return a.title.localeCompare(b.title)
+                    })
+                    this.changeMedias(tabTitle)
+                    new Lightbox(this.namePhotographe, tabTitle)
+                }
+            })
+        });
     }
 
     //change les medias de place en fonction de la valeur choisi
