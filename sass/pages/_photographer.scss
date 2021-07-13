@@ -61,20 +61,23 @@
             align-items: center;
             border-bottom: 1px solid white;
         }
+       
         li:last-child {
             border-bottom: none;
         }
         li a {
             color: white;
             font-size: 1.2em;
-
+        }
+        li a:hover {
+            background-color: transparent;
         }
     }
     #dropdownButton::after {
         display: none;
     }
 
-    label[for="sortBy"]{
+    label[for="dropdownButton"]{
         font-weight: 700;
     }
 
@@ -184,14 +187,52 @@
 
 @include mobile-only {
     #photographer {
-        #sortBy , label[for="sortBy"]{
+        #sortBy , label[for="dropdownButton"]{
         display: none;
+        }
+        #dropdown {
+            display: none;
         }
         #mediasList {
             margin-top: 15%;
         }
         .totalLikesAndPricePhotograph {
             display: none;
+        }
+        #lightboxModal {
+            .lightbox {
+                width: 95%;
+
+                height: 340px;
+                &-close {
+                    top: 4px;
+                    right: 19px;
+                    svg {
+                        width: 20px;
+                    }
+                }
+                &-media_image {
+                    height: 245px;
+                    width: 85%;
+                }
+                &-media_name {
+                    width: 85%;
+                    bottom: 12px;
+                    font-size: 1em;
+                }
+                &-arrow_left {
+                    left: -15px;
+                    svg {
+                        width: 15px;
+                    }
+                }
+                &-arrow_right {
+                    right: -15px;
+                    svg {
+                        width: 15px;
+                    }
+                }
+            }
         }
     }
 }

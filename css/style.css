@@ -586,10 +586,13 @@ a {
   color: white;
   font-size: 1.2em;
 }
+#photographer #dropdown .dropdown-menu.show li a:hover {
+  background-color: transparent;
+}
 #photographer #dropdownButton::after {
   display: none;
 }
-#photographer label[for=sortBy] {
+#photographer label[for=dropdownButton] {
   font-weight: 700;
 }
 #photographer #mediasList {
@@ -690,7 +693,10 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-  #photographer #sortBy, #photographer label[for=sortBy] {
+  #photographer #sortBy, #photographer label[for=dropdownButton] {
+    display: none;
+  }
+  #photographer #dropdown {
     display: none;
   }
   #photographer #mediasList {
@@ -698,6 +704,38 @@ a {
   }
   #photographer .totalLikesAndPricePhotograph {
     display: none;
+  }
+  #photographer #lightboxModal .lightbox {
+    width: 95%;
+    height: 340px;
+  }
+  #photographer #lightboxModal .lightbox-close {
+    top: 4px;
+    right: 19px;
+  }
+  #photographer #lightboxModal .lightbox-close svg {
+    width: 20px;
+  }
+  #photographer #lightboxModal .lightbox-media_image {
+    height: 245px;
+    width: 85%;
+  }
+  #photographer #lightboxModal .lightbox-media_name {
+    width: 85%;
+    bottom: 12px;
+    font-size: 1em;
+  }
+  #photographer #lightboxModal .lightbox-arrow_left {
+    left: -15px;
+  }
+  #photographer #lightboxModal .lightbox-arrow_left svg {
+    width: 15px;
+  }
+  #photographer #lightboxModal .lightbox-arrow_right {
+    right: -15px;
+  }
+  #photographer #lightboxModal .lightbox-arrow_right svg {
+    width: 15px;
   }
 }
 
