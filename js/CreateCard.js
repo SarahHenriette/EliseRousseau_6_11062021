@@ -2,6 +2,15 @@ class CreateCard {
     constructor(data){
         this.dataPhotograph = data
         this.main = document.querySelector(".photographsList")
+        this.createElementCard()
+        this.attributionClass()
+        this.attributionAttribute()
+        this.integrationTextElement()
+        this.integrationTagFooter()
+        this.rattachElementDOM()
+    }
+
+    createElementCard() {
         this.photograph = document.createElement('article')
         this.photographHeader = document.createElement('a') 
         this.photographContainImage = document.createElement('div')
@@ -12,13 +21,7 @@ class CreateCard {
         this.photographSlogan= document.createElement('p') 
         this.photographPrice= document.createElement('p') 
         this.photographFooter = document.createElement('ul') 
-        this.attributionClass()
-        this.attributionAttribute()
-        this.integrationTextElement()
-        this.integrationTagFooter()
-        this.rattachElementDOM()
     }
-
     attributionClass(){
         this.photograph.classList.add("photograph")
         this.photographHeader.classList.add("photograph-header")
