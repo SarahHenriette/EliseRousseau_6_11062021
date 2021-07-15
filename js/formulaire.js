@@ -2,6 +2,7 @@
 class Formulaire {
     constructor (data) {
         this.btnContactMe = document.getElementById("btnContactMe")
+        this.main = document.getElementById("photographer")
         this.formulaire = document.getElementById("formulaire")
         this.formulaireNamePhotograph = document.getElementById("formulaire-namePhotographe")
         this.data = data
@@ -45,6 +46,11 @@ class Formulaire {
                     //affichage des valeurs du form
                     console.log(data)
 
+                    //display message confirm
+                    this.formulaire.querySelector(".formulaire-msgConfirm").style.display="block"
+                    setTimeout(() => {
+                        this.formulaire.querySelector(".formulaire-msgConfirm").style.display="none"
+                    }, 5000);
                     //reset le form
                     e.target.reset()
                     const textControl = document.querySelectorAll(".text-control")
@@ -77,6 +83,7 @@ class Formulaire {
     closeForm() {
         this.btnClose.addEventListener("click", ()=>{
             this.formulaire.style.display= "none"
+
         })
     }
 
@@ -84,6 +91,8 @@ class Formulaire {
     openForm() {
         this.btnContactMe.addEventListener("click", ()=>{
             this.formulaire.style.display= "block"
+            this.formulaire.setAttribute("aria-hidden", "false")
+            this.main.setAttribute("aria-hidden", "true")
         })
     }
 
@@ -98,6 +107,7 @@ class Formulaire {
             }
         })
     }
+    
     success(element, smallError) {
         element.classList.add("success")
         element.classList.remove("error") 

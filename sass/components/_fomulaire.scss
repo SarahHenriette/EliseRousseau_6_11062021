@@ -9,7 +9,8 @@
     z-index: 1;
     form {
         width: 669px;
-        height: 900px;
+        min-height: 900px;
+        max-height: 970px;
         border-radius: 5px;
         background-color: #DB8876;
         box-shadow: -5px 10px 10px rgba($color: #000000, $alpha: 0.4);
@@ -36,6 +37,14 @@
             right: 35px;
             top: 35px;
         }
+        .formulaire-msgConfirm {
+            position: absolute;
+            top: -50px;
+            font-size: 1.5em;
+            display: inline-block;
+            color: $primaryColor;
+            display: none;
+        }
         .formData {
             display: flex;
             flex-direction: column;
@@ -58,6 +67,8 @@
                 border: none;
                 height: 170px;
                 border-radius: 5px;
+                padding-left: 20px;
+                padding-top: 20px;
             }
             .error {
                 border: solid 2px red;

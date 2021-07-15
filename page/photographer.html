@@ -12,87 +12,81 @@
     <header class="header" role="banner">
         <figure class="header-logo"><a href="../index.html"><img src="../img/logo.png" alt="Fisheye home page"></a></figure>
     </header>
-    <main id="photographer">
+    <main id="photographer" aria-hidden="false">
         <header class= "photographerHeader">
             <section class= "photographerHeader-text">
-                <h1 class= "photographerHeader-text_name"></h1>
-                <p class= "photographerHeader-text_city"></p>
-                <p class= "photographerHeader-text_slogan"></p>
+                <h1 class= "photographerHeader-text_name" tabindex="0"></h1>
+                <p class= "photographerHeader-text_city" tabindex="0"></p>
+                <p class= "photographerHeader-text_slogan" tabindex="0"></p>
                 <ul class="photographerHeader-text_tags"></ul>
             </section>
-            <button class="photographerHeader-btn btnContactMe" id="btnContactMe">Contactez-moi</button>
-            <figure class="photographerHeader-img"><img src="" alt=""></figure>
+            <button class="photographerHeader-btn btnContactMe" id="btnContactMe" aria-label="Contact Me" >Contactez-moi</button>
+            <figure class="photographerHeader-img"></figure>
         </header>
-        <div class="formulaire" id="formulaire">
+        <div class="formulaire" id="formulaire" aria-hidden="true" role="dialog" aria-labelledby="formulaire-title">
             <form action="">
-                <span class="formulaire-close"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="formulaire-close" tabindex="0"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="white"/>
                     </svg>
                 </span>
-                <p class="formulaire-title">Contactez-moi</p>
+                <p class="formulaire-title" id="formulaire-title" tabindex="0">Contactez-moi</p>
                 <p class="formulaire-title" id="formulaire-namePhotographe"></p>
                 <div class="formData">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" name="prenom" id="prenom" class="text-control">
+                    <label for="prenom" id="label-prenom" tabindex="0">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" class="text-control" aria-labelledby="label-prenom">
                     <small class="message-error">Error</small>
                 </div>
                 <div class="formData">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" id="nom" class="text-control">
+                    <label for="nom" id="label-nom">Nom</label>
+                    <input type="text" name="nom" id="nom" class="text-control" aria-labelledby="label-nom">
                     <small class="message-error">Error</small>
                 </div>
                 <div class="formData">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="text-control">
+                    <label for="email" id="label-email">Email</label>
+                    <input type="email" name="email" id="email" class="text-control" aria-labelledby="label-email">
                     <small class="message-error">Error</small>
                 </div>
                 <div class="formData">
-                    <label for="message">Votre message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" class="text-control"></textarea>
+                    <label for="message" id="label-message">Votre message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" class="text-control" aria-labelledby="label-message"></textarea>
                     <small class="message-error">Error</small>
                 </div>
                 <input type="submit" value="Envoyer">
+                <p class="formulaire-msgConfirm">Fécilitation ! votre message a bien été enregistré</p>
             </form>
         </div>
-        <label for="dropdownButton">Trier par</label>
-        <div class="dropdown" id="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <label for="dropdownButton" id="Order by">Trier par</label>
+        <div class="dropdown" id="dropdown" role="dropdown" aria-labelledby="Order by" tabindex="0">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton" role="button dropdown" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
               Popularité
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownButton">
-              <li><a class="dropdown-item dropdown-item_popularity" aria-label="popularity" href="#">Popularité</a></li>
-              <li><a class="dropdown-item dropdown-item_date" aria-label="date" href="#">Date</a></li>
-              <li><a class="dropdown-item dropdown-item_title" aria-label="title" href="#">Titre</a></li>
+              <li><a class="dropdown-item dropdown-item_popularity" aria-label="popularity" href="#" tabindex="0">Popularité</a></li>
+              <li><a class="dropdown-item dropdown-item_date" aria-label="date" href="#" tabindex="0">Date</a></li>
+              <li><a class="dropdown-item dropdown-item_title" aria-label="title" href="#" tabindex="0">Titre</a></li>
             </ul>
-            <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+            <span class="dropdown-arrow"><em class="fas fa-chevron-down"></em></span>
         </div>
 
-        <div class="mediasList" id="mediasList" aria-label="Media List"></div>
+        <div class="mediasList" id="mediasList" aria-label="Media List" aria-hidden="true"></div>
 
         <div class="totalLikesAndPricePhotograph">
-            <p><span class="totalLikes"></span><i class="fas fa-heart"></i></p>
-            <p><span class="pricePhotograph"></span><i class="fas fa-euro-sign"></i> / jour</p>
-        </div>
-        <div class="lightboxModal" id="lightboxModal">
-            <div class="lightbox">
-                <span class="lightbox-close"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#911C1C"/>
-                    </svg></span>
-                <span class="lightbox-arrow_left"><svg width="30" height="48" viewBox="0 0 30 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M29.6399 42.36L11.3199 24L29.6399 5.64L23.9999 -2.46532e-07L-0.000107861 24L23.9999 48L29.6399 42.36Z" fill="#911C1C"/>
-                    </svg></span>
-                <span class="lightbox-arrow_right"><svg width="30" height="48" viewBox="0 0 30 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.360108 5.64L18.6801 24L0.360107 42.36L6.00011 48L30.0001 24L6.00011 3.88195e-06L0.360108 5.64Z" fill="#911C1C"/>
-                    </svg>
-                    </span>
-                <div class="lightbox-media_image">
-                    <img src="" alt="">
-                </div>
-                <span class="lightbox-media_name"></span>
-            </div>
+            <p><span class="totalLikes"></span><em class="fas fa-heart"></em></p>
+            <p><span class="pricePhotograph"></span><em class="fas fa-euro-sign"></em> / jour</p>
         </div>
 
     </main>
+    
+    <div class="lightboxModal" role="dialog"  aria-labelledby="lightbox-title" id="lightboxModal" aria-hidden="true" aria-describedby="image closeup view" tabindex="-1">
+        <div class="lightbox"  id="lightbox image closeup view"  tabindex="0">
+            <button class="lightbox-close" arial-label="close dialog" ><em class="fas fa-times fa-2x"></em></button>
+            <button class="lightbox-arrow_left" arial-label="Previous image"><em class="fas fa-chevron-left fa-2x"></em></button>
+            <button class="lightbox-arrow_right" arial-label="Next image"><em class="fas fa-chevron-right fa-2x"></em></button>
+            <div class="lightbox-media_image"></div>
+            <span class="lightbox-media_name" id="lightbox-title" tabindex="0"></span>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/Lightbox.js"></script>
     <script type="text/javascript" src="../js/redirectTags.js"></script>

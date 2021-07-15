@@ -1,6 +1,7 @@
 class CreateCard {
     constructor(data){
         this.dataPhotograph = data
+        console.log(this.dataPhotograph)
         this.main = document.querySelector(".photographsList")
         this.createElementCard()
         this.attributionClass()
@@ -36,7 +37,13 @@ class CreateCard {
 
     attributionAttribute(){
         this.photographHeader.setAttribute("href", "../page/photographer.html?id=" + this.dataPhotograph.id)
+        this.photographHeader.setAttribute("aria-label", this.dataPhotograph.name)
         this.photographImage.setAttribute("src", "../img/PhotographIDPhoto/" + this.dataPhotograph.portrait)
+        this.photographImage.setAttribute("alt", this.dataPhotograph.alt)
+        this.photographName.setAttribute("tabindex", 0)
+        this.photographCity.setAttribute("tabindex", 0)
+        this.photographSlogan.setAttribute("tabindex", 0)
+        this.photographPrice.setAttribute("tabindex", 0)
     }
 
     integrationTextElement(){
@@ -51,6 +58,7 @@ class CreateCard {
             let liSpan = document.createElement("li")
             let span = document.createElement("span")
             span.setAttribute("aria-label", tag)
+            span.setAttribute("tabindex", 0)
             span.classList.add("btnTags")
             span.innerHTML = "#" + tag
             this.photographFooter.appendChild(liSpan)

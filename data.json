@@ -8,7 +8,8 @@
         "tags": ["portrait", "events", "travel", "animals"],
         "tagline": "Voir le beau dans le quotidien",
         "price": 400,
-        "portrait": "MimiKeel.jpg"
+        "portrait": "MimiKeel.jpg",
+        "alt": "portrait de jolie femme brune"
       },
       {
         "name": "Ellie-Rose Wilkens",
@@ -18,7 +19,8 @@
         "tags": ["sports", "architecture"],
         "tagline": "Capturer des compositions complexes",
         "price": 250,
-        "portrait": "EllieRoseWilkens.jpg"
+        "portrait": "EllieRoseWilkens.jpg",
+        "alt": "portrait de jolie femme portant des lunette avec des cheveux colorés"
       },
       {
         "name": "Tracy Galindo",
@@ -28,7 +30,8 @@
         "tags": ["art", "fashion", "events"],
         "tagline": "Photographe freelance",
         "price": 500,
-        "portrait": "TracyGalindo.jpg"
+        "portrait": "TracyGalindo.jpg",
+        "alt": "portrait de jeune homme avec cheveu bouclés et barbe"
       },
       {
         "name": "Nabeel Bradford",
@@ -38,7 +41,8 @@
         "tags": ["travel", "portrait"],
         "tagline": "Toujours aller de l'avant",
         "price": 350,
-        "portrait": "NabeelBradford.jpg"
+        "portrait": "NabeelBradford.jpg",
+        "alt": "homme regardant la montagne"
       },
       {
         "name": "Rhode Dubois",
@@ -48,7 +52,8 @@
         "tags": ["sport", "fashion", "events", "animals"],
         "tagline": "Je crée des souvenirs",
         "price": 275,
-        "portrait": "RhodeDubois.jpg"
+        "portrait": "RhodeDubois.jpg",
+        "alt": "portrait de jeune femme brune avec un fond noir"
       },
       {
         "name": "Marcel Nikolic",
@@ -58,7 +63,8 @@
         "tags": ["travel", "architecture"],
         "tagline": "Toujours à la recherche de LA photo",
         "price": 300,
-        "portrait": "MarcelNikolic.jpg"
+        "portrait": "MarcelNikolic.jpg",
+        "alt": "portrait de jeune homme barbus tenant son objectif"
       }
     ],
     "media": [
@@ -70,7 +76,8 @@
         "tags": ["fashion"],
         "likes": 62,
         "date": "2011-12-08",
-        "price": 55
+        "price": 55,
+        "alt": "Fashion Yellow Beach"
       },
       {
         "id": 8520927,
@@ -80,7 +87,8 @@
         "tags": ["fashion"],
         "likes": 11,
         "date": "2011-11-06",
-        "price": 55
+        "price": 55,
+        "alt": "Fashion Urban Jungle"
       },
       {
         "id": 9025895,
@@ -90,7 +98,8 @@
         "tags": ["fashion"],
         "likes": 72,
         "date": "2013-08-12",
-        "price": 55
+        "price": 55,
+        "alt": "Fashion Pattern on a Pattern"
       },
       {
         "id": 9275938,
@@ -100,7 +109,8 @@
         "tags": ["events"],
         "likes": 69,
         "date": "2018-02-22",
-        "price": 55
+        "price": 55,
+        "alt": "Wedding Gazebo"
       },
       {
         "id": 2053494,
@@ -110,7 +120,8 @@
         "tags": ["events"],
         "likes": 2,
         "date": "2020-05-25",
-        "price": 55
+        "price": 55,
+        "alt": "Sparkles"
       },
       {
         "id": 7324238,
@@ -120,7 +131,8 @@
         "tags": ["events"],
         "likes": 33,
         "date": "2019-06-12",
-        "price": 55
+        "price": 55,
+        "alt": "18th Anniversary"
       },
       {
         "id": 8328953,
@@ -130,7 +142,8 @@
         "tags": ["art"],
         "likes": 24,
         "date": "2011-12-08",
-        "price": 100
+        "price": 100,
+        "alt": "Wooden Horse Sculpture"
       },
       {
         "id": 7502053,
@@ -140,7 +153,8 @@
         "tags": ["art"],
         "likes": 88,
         "date": "2007-05-07",
-        "price": 55
+        "price": 55,
+        "alt": "Triangle Man"
       },
       {
         "id": 8523492,
@@ -150,7 +164,8 @@
         "tags": ["art"],
         "likes": 24,
         "date": "2018-05-05",
-        "price": 55
+        "price": 55,
+        "alt": "Purple Tunnel"
       },
       {
         "id": 75902334,
@@ -160,7 +175,8 @@
         "tags": ["art"],
         "likes": 75,
         "date": "2019-11-25",
-        "price": 55
+        "price": 55,
+        "alt": "Art Mine"
       },
   
       {
@@ -171,7 +187,9 @@
         "tags": ["sport"],
         "likes": 52,
         "date": "2013-02-30",
-        "price": 70
+        "price": 70,
+        "alt": "8 Rows"
+
       },
       {
         "id": 92758372,
@@ -181,7 +199,8 @@
         "tags": ["fashion"],
         "likes": 58,
         "date": "2018-07-17",
-        "price": 70
+        "price": 70,
+        "alt": "Fashion Wings"
       },
       {
         "id": 32958383,
@@ -191,7 +210,8 @@
         "tags": ["fashion"],
         "likes": 11,
         "date": "2019-08-12",
-        "price": 70
+        "price": 70,
+        "alt": "Melody Red on Stripes"
       },
       {
         "id": 928587383,
@@ -201,7 +221,8 @@
         "tags": ["events"],
         "likes": 2,
         "date": "2019-01-02",
-        "price": 70
+        "price": 70,
+        "alt": "Venture Conference"
       },
       {
         "id": 725639493,
@@ -211,7 +232,8 @@
         "tags": ["events"],
         "likes": 3,
         "date": "2019-05-20",
-        "price": 70
+        "price": 70,
+        "alt": "Product Pitch"
       },
       {
         "id": 23394384,
@@ -221,7 +243,8 @@
         "tags": ["events"],
         "likes": 52,
         "date": "2019-07-18",
-        "price": 70
+        "price": 70,
+        "alt": "Musical Festival Keyboard"
       },
       {
         "id": 87367293,
@@ -231,7 +254,8 @@
         "tags": ["events"],
         "likes": 23,
         "date": "2018-02-22",
-        "price": 70
+        "price": 70,
+        "alt": "Musical Festival Singer"
       },
       {
         "id": 593834784,
@@ -241,7 +265,8 @@
         "tags": ["animals"],
         "likes": 52,
         "date": "2017-03-13",
-        "price": 70
+        "price": 70,
+        "alt": "Animal Majesty"
       },
       {
         "id": 83958935,
@@ -251,7 +276,8 @@
         "tags": ["animals"],
         "likes": 52,
         "date": "2016-06-12",
-        "price": 70
+        "price": 70,
+        "alt": "Cute Puppy on Sunset"
       },
   
       {
@@ -262,7 +288,8 @@
         "tags": ["travel"],
         "likes": 23,
         "date": "2017-03-18",
-        "price": 45
+        "price": 45,
+        "alt": "Rock Mountains"
       },
       {
         "id": 343423425,
@@ -272,7 +299,8 @@
         "tags": ["travel"],
         "likes": 101,
         "date": "2017-04-03",
-        "price": 45
+        "price": 45,
+        "alt": "Outdoor Baths"
       },
       {
         "id": 73434243,
@@ -282,7 +310,8 @@
         "tags": ["travel"],
         "likes": 99,
         "date": "2018-04-30",
-        "price": 45
+        "price": 45,
+        "alt": "Road into the Hill"
       },
       {
         "id": 23425523,
@@ -292,7 +321,8 @@
         "tags": ["travel"],
         "likes": 34,
         "date": "2016-04-05",
-        "price": 45
+        "price": 45,
+        "alt": "Bridge into the Forest"
       },
       {
         "id": 23134513,
@@ -302,7 +332,8 @@
         "tags": ["travel"],
         "likes": 23,
         "date": "2017-03-18",
-        "price": 45
+        "price": 45,
+        "alt": "Boat Wonderer"
       },
       {
         "id": 92352352,
@@ -312,7 +343,8 @@
         "tags": ["portrait"],
         "likes": 66,
         "date": "2018-05-24",
-        "price": 45
+        "price": 45,
+        "alt": "Portrait Sunkiss"
       },
       {
         "id": 34513453,
@@ -322,7 +354,8 @@
         "tags": ["portait"],
         "likes": 52,
         "date": "2017-04-21",
-        "price": 45
+        "price": 45,
+        "alt": "Shaw Potrait"
       },
       {
         "id": 23523533,
@@ -332,7 +365,8 @@
         "tags": ["portait"],
         "likes": 95,
         "date": "2018-11-02",
-        "price": 45
+        "price": 45,
+        "alt": "portrait Alexandra"
       },
       {
         "id": 525834234,
@@ -342,7 +376,8 @@
         "tags": ["portait"],
         "likes": 25,
         "date": "2019-01-02",
-        "price": 45
+        "price": 45,
+        "alt": "Afternoon Break"
       },
   
       {
@@ -353,7 +388,8 @@
         "tags": ["travel"],
         "likes": 88,
         "date": "2019-02-03",
-        "price": 45
+        "price": 45,
+        "alt": "Lonesome"
       },
       {
         "id": 625025343,
@@ -363,7 +399,8 @@
         "tags": ["travel"],
         "likes": 85,
         "date": "2019-04-03",
-        "price": 45
+        "price": 45,
+        "alt": "Hillside Color"
       },
       {
         "id": 2525345343,
@@ -373,7 +410,8 @@
         "tags": ["portait"],
         "likes": 34,
         "date": "2019-04-07",
-        "price": 45
+        "price": 45,
+        "alt": "Wednesday Potrait"
       },
       {
         "id": 2523434634,
@@ -383,7 +421,8 @@
         "tags": ["portait"],
         "likes": 63,
         "date": "2019-04-07",
-        "price": 45
+        "price": 45,
+        "alt": "Nora Portrait"
       },
       {
         "id": 398847109,
@@ -393,7 +432,8 @@
         "tags": ["portait"],
         "likes": 55,
         "date": "2019-06-20",
-        "price": 45
+        "price": 45,
+        "alt": "Raw Black Portrait"
       },
       {
         "id": 2534342,
@@ -403,7 +443,8 @@
         "tags": ["events"],
         "likes": 25,
         "date": "2019-06-21",
-        "price": 45
+        "price": 45,
+        "alt": "Seaside Wedding"
       },
       {
         "id": 65235234,
@@ -413,7 +454,8 @@
         "tags": ["events"],
         "likes": 52,
         "date": "2019-06-25",
-        "price": 45
+        "price": 45,
+        "alt": "Boulder Wedding"
       },
       {
         "id": 23523434,
@@ -423,7 +465,8 @@
         "tags": ["events"],
         "likes": 77,
         "date": "2019-06-28",
-        "price": 45
+        "price": 45,
+        "alt": "Benevides Wedding"
       },
       {
         "id": 5234343,
@@ -433,7 +476,8 @@
         "tags": ["animals"],
         "likes": 142,
         "date": "2019-08-23",
-        "price": 60
+        "price": 60,
+        "alt": "Wild Horses in the Mountains"
       },
       {
         "id": 95234343,
@@ -443,7 +487,8 @@
         "tags": ["animals"],
         "likes": 59,
         "date": "2019-07-02",
-        "price": 60
+        "price": 60,
+        "alt": "Rainbow Bird"
       },
   
       {
@@ -454,7 +499,8 @@
         "tags": ["travel"],
         "likes": 25,
         "date": "2019-04-03",
-        "price": 60
+        "price": 60,
+        "alt": "Japanese Tower, Kyoto"
       },
       {
         "id": 2523434,
@@ -464,7 +510,8 @@
         "tags": ["travel"],
         "likes": 53,
         "date": "2019-05-06",
-        "price": 60
+        "price": 60,
+        "alt": "Senset on Canals, Venice"
       },
       {
         "id": 95293534,
@@ -474,7 +521,8 @@
         "tags": ["travel"],
         "likes": 33,
         "date": "2019-05-12",
-        "price": 60
+        "price": 60,
+        "alt": "Mountain and Lake"
       },
       {
         "id": 356234343,
@@ -484,7 +532,8 @@
         "tags": ["travel"],
         "likes": 53,
         "date": "2019-06-20",
-        "price": 60
+        "price": 60,
+        "alt": "City Bike and Stair, Paris"
       },
       {
         "id": 235234343,
@@ -494,7 +543,8 @@
         "tags": ["travel"],
         "likes": 63,
         "date": "2019-06-26",
-        "price": 60
+        "price": 60,
+        "alt": "Adventure Door, India"
       },
       {
         "id": 6234234343,
@@ -504,7 +554,8 @@
         "tags": ["architecture"],
         "likes": 52,
         "date": "2019-06-30",
-        "price": 60
+        "price": 60,
+        "alt": "Contrast, St Petersburg"
       },
       {
         "id": 6525666253,
@@ -514,7 +565,8 @@
         "tags": ["architecture"],
         "likes": 63,
         "date": "2019-07-20",
-        "price": 60
+        "price": 60,
+        "alt": "On a Hill, Tibet"
       },
       {
         "id": 98252523433,
@@ -524,7 +576,8 @@
         "tags": ["architecture"],
         "likes": 88,
         "date": "2020-01-05",
-        "price": 60
+        "price": 60,
+        "alt": "Leaning Tower, Pisa"
       },
       {
         "id": 9259398453,
@@ -534,7 +587,9 @@
         "tags": ["architecture"],
         "likes": 57,
         "date": "2020-01-20",
-        "price": 65
+        "price": 65,
+        "alt": "Circle Highways, Buenos Aires"
+
       },
       {
         "id": 3523523534,
@@ -544,7 +599,8 @@
         "tags": ["architecture"],
         "likes": 54,
         "date": "2020-05-05",
-        "price": 60
+        "price": 60,
+        "alt": "Corner Building and Blue Sky"
       },
   
       {
@@ -555,7 +611,8 @@
         "tags": ["sport"],
         "likes": 150,
         "date": "2018-02-30",
-        "price": 70
+        "price": 70,
+        "alt": "Tricks in the Air"
       },
       {
         "id": 235234343,
@@ -565,7 +622,8 @@
         "tags": ["sport"],
         "likes": 101,
         "date": "2018-03-05",
-        "price": 65
+        "price": 65,
+        "alt": "Climber"
       },
       {
         "id": 235343222,
@@ -575,7 +633,8 @@
         "tags": ["sport"],
         "likes": 103,
         "date": "2018-03-10",
-        "price": 70
+        "price": 70,
+        "alt": "Surfer"
       },
       {
         "id": 7775342343,
@@ -585,7 +644,8 @@
         "tags": ["sport"],
         "likes": 77,
         "date": "2018-04-16",
-        "price": 50
+        "price": 50,
+        "alt": "Skier"
       },
       {
         "id": 9253445784,
@@ -595,7 +655,8 @@
         "tags": ["sport"],
         "likes": 88,
         "date": "2018-04-22",
-        "price": 65
+        "price": 65,
+        "alt": "Race End"
       },
       {
         "id": 22299394,
@@ -605,7 +666,8 @@
         "tags": ["sport"],
         "likes": 95,
         "date": "2018-04-27",
-        "price": 70
+        "price": 70,
+        "alt": "Jump!"
       },
       {
         "id": 3452342633,
@@ -615,7 +677,8 @@
         "tags": ["architecture"],
         "likes": 52,
         "date": "2018-05-03",
-        "price": 75
+        "price": 75,
+        "alt": "White Light"
       },
       {
         "id": 939234243,
@@ -625,7 +688,8 @@
         "tags": ["architecture"],
         "likes": 55,
         "date": "2018-05-10",
-        "price": 72
+        "price": 72,
+        "alt": "Water on Modern Building"
       },
       {
         "id": 222959233,
@@ -635,7 +699,8 @@
         "tags": ["architecture"],
         "likes": 85,
         "date": "2018-05-15",
-        "price": 71
+        "price": 71,
+        "alt": "Horseshoe"
       },
       {
         "id": 965933434,
@@ -645,7 +710,8 @@
         "tags": ["architecture"],
         "likes": 66,
         "date": "2018-05-20",
-        "price": 58
+        "price": 58,
+        "alt": "Cross Bar"
       },
       {
         "id": 777723343,
@@ -655,7 +721,8 @@
         "tags": ["architecture"],
         "likes": 79,
         "date": "2018-05-21",
-        "price": 80
+        "price": 80,
+        "alt": "Connected Curves"
       }
     ]
   }

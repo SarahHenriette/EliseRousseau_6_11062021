@@ -41,7 +41,11 @@ class VideoMedia {
     attributionAttribute(){
         this.mediaHeaderLinkMedia.setAttribute("href", "#")
         this.mediaHeaderVideoSrc.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ this.data.video)
+        this.mediaHeaderVideoSrc.setAttribute("alt", this.data.alt)
         this.mediaHeaderVideo.setAttribute("id", this.data.id)
+        // this.mediaName.setAttribute("tabindex", 0)
+        // this.mediaNumberLike.setAttribute("tabindex", 0)
+        // this.mediaButtonLike.setAttribute("tabindex", 0)
     }
 
     //Integration des text dans les elements

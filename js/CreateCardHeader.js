@@ -6,10 +6,18 @@ class CreateCardHeader {
         this.city = document.querySelector('.photographerHeader-text_city')
         this.slogan = document.querySelector('.photographerHeader-text_slogan')
         this.tags = document.querySelector('.photographerHeader-text_tags')
-        this.image = document.querySelector('.photographerHeader-img img')
+        this.image = document.querySelector('.photographerHeader-img')
         this.infosPhotograph()
         this.tagsPhotograph()
         this.portraitPhotograph()
+    }
+    
+    //Insere la photo
+    portraitPhotograph(){
+        let img = document.createElement("img")
+        img.setAttribute("src" , "../img/PhotographIDPhoto/"+ this.dataPhotograph.portrait)
+        img.setAttribute("aria-label" , this.dataPhotograph.name)
+        this.image.appendChild(img)
     }
 
     //Insere les infos du photographe dans les balises html
@@ -25,6 +33,7 @@ class CreateCardHeader {
             let liSpan = document.createElement("li")
             let span = document.createElement("span")
             span.setAttribute("aria-label", tag)
+            span.setAttribute("tabindex", 0) 
             span.classList.add("btnTags")
             span.innerHTML = "#" + tag
             this.tags.appendChild(liSpan)
@@ -32,8 +41,9 @@ class CreateCardHeader {
         });
     }
 
-    //Insere la photo
-    portraitPhotograph () {
-        this.image.setAttribute("src" , "../img/PhotographIDPhoto/"+ this.dataPhotograph.portrait)
-    } 
+    // //Insere la photo
+    // portraitPhotograph () {
+    //     this.image.setAttribute("src" , "../img/PhotographIDPhoto/"+ this.dataPhotograph.portrait)
+    //     this.image.setAttribute("aria-label" , this.dataPhotograph.name)
+    // } 
 }
