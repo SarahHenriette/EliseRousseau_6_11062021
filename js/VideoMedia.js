@@ -1,4 +1,3 @@
-
 class VideoMedia {
     constructor(namePhotographe , data){
             this.data = data
