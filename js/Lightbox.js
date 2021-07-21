@@ -12,122 +12,102 @@ class Lightbox {
         this.emplacementNameImageLightbox = document.querySelector('.lightbox-media_name')
         this.main = document.getElementById("photographer")
         this.index = 0
-        this.displayLightbox()
-        this.clickCloseLightbox()
-        this.arrowNext() 
-        this.arrowPrevious()
-        console.log(this.mediasDisplay)
+        this.media = ""
+            this.displayLightbox()
+            this.clickCloseLightbox()
+            this.arrowNext() 
+            this.arrowPrevious()
+            this.keyup(this.media)
     }
-
+    //Gère les touches du clavier (haut, fleche gauche et droite)
     keyup(media) {
-        document.addEventListener("keyup", (e)=> {
-            if(e.key == "ArrowRight") {
-                this.changeDisplay(this.index + 1, this.listMedias[this.listMedias.length-1], -1)
-            }
-            if(e.key == "ArrowLeft") {
-                this.changeDisplay(this.index - 1, this.listMedias[0], this.listMedias.length)
-            }
-            if(e.key == "Escape") {
-                // this.closeLightbox()
-                document.querySelector("#lightboxModal .lightbox").blur()
-                this.closeLightbox()
-                media.focus()
-                console.log( media)
-            }
-        })
+            document.addEventListener("keyup", (e)=> {
+                if(e.key === "ArrowRight") {
+                    this.changeDisplay(this.index + 1)
+                }
+                if(e.key === "ArrowLeft") {
+                    this.changeDisplay(this.index - 1)            
+                }
+                if(e.key == "Escape") {
+                    document.querySelector("#lightboxModal .lightbox").blur()
+                    this.closeLightbox()
+                    this.media.focus()
+                }
+            })
     }
+    //ferme le carrousel/lightbox au click
     clickCloseLightbox(){
         this.lightboxBtnClose.addEventListener("click", ()=>{
             this.closeLightbox()
         })
     }
+    //actions à la fermeture de la lightbox
     closeLightbox(){
-            this.lightbox.style.display= "none"
-            this.main.setAttribute("aria-hidden", "false")
-            this.lightbox.setAttribute("aria-hidden", "true")
+        this.lightbox.style.display= "none"
+        this.main.setAttribute("aria-hidden", "false")
+        this.lightbox.setAttribute("aria-hidden", "true")
     } 
-
+    //Gére le bouton droite/suivant de la lightbox
     arrowNext() {
         this.lightboxBtnRight.addEventListener("click", ()=> {
-            // console.log("next")
-        this.changeDisplay(this.index + 1, this.listMedias[this.listMedias.length-1], -1)
+        this.changeDisplay(this.index + 1)
         })
     }
-
+    //Gére le bouton gauche/précédent de la lightbox
     arrowPrevious() {
         this.lightboxBtnLeft.addEventListener("click", ()=> {
-            // console.log("previous")
-            this.changeDisplay(this.index - 1, this.listMedias[0], this.listMedias.length)
+            this.changeDisplay(this.index - 1)
         })
     }
+    //permet de changer le contenu de la lightbox
+    changeDisplay(addition){
+        if(this.media !== "") {
+            this.index = addition
+            if(this.index == this.listMedias.length){
+                this.index = 0
+            }
+            if(this.index == -1){
+                this.index = this.listMedias.length-1
+            }
 
-    changeDisplay(addition, endList , newValueIndex){
-        // console.log(this.index)
-        this.index = addition
-        if(this.listMedias[this.index] == this.listMedias[this.listMedias.length]){
-            this.index = 1
-            // console.log(this.index)
-        }
-        this.emplacementNameImageLightbox.innerHTML = this.listMedias[this.index].title
-        this.mediaImageOrVideo(this.listMedias[this.index])
-        if(this.listMedias[this.index] == endList){
-            this.index = newValueIndex
-            // console.log(this.index)
+            this.emplacementNameImageLightbox.innerHTML = this.listMedias[this.index].title
+            this.mediaImageOrVideo(this.listMedias[this.index])
+           
         }
     }
-
+    //permet d'afficher la lightbox
     displayLightbox(){
         this.mediasDisplay.forEach(media => {
-            media.addEventListener("click", (e)=>{
+            media.parentElement.addEventListener("click", (e)=>{
+                media.parentElement.blur()//enleve le focus du media
                 this.lightbox.style.display= "block"
+                document.querySelector("#lightboxModal .lightbox").focus()//met le focus sur la lightbox
                 this.main.setAttribute("aria-hidden", "true")
                 this.lightbox.setAttribute("aria-hidden", "false")
-                this.displayMedia(e.target.id)
-                this.keyup(media)
+                this.media = media.parentElement
+                this.displayMedia(this.media.firstElementChild.id)//affiche l'image ou la video 
             })
-       
         });
-        this.mediasLink.forEach(media => {
-            media.addEventListener("keyup", (eventKey)=> {
-                console.log(media)
-                this.main.setAttribute("aria-hidden", "true")
-                this.lightbox.setAttribute("aria-hidden", "false")
-                if(eventKey.key == "Enter") {
-                    media.blur()
-                    this.lightbox.style.display= "flex"
-                    document.querySelector("#lightboxModal .lightbox").focus()
-                    this.lightbox.setAttribute("tabindex", "1")
-                    this.displayMedia(media.querySelector(".media-src").id)
-                    this.keyup(media)
-                }
-            })
-        })
     }
-
+    //récupére le bon media parmis la liste medias et l'affiche dans la lightbox 
     displayMedia(id) {
         for (let index = 0; index < this.listMedias.length; index++) {
             const element = this.listMedias[index];
             if(element.id == id) {
                 this.index= index
-                console.log(this.index)
-                let createBaliseImg = document.createElement('img')
-                createBaliseImg.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ element.image)
-                this.emplacementImageLightbox.appendChild(createBaliseImg)
-                this.emplacementNameImageLightbox.innerHTML = element.title
                 this.mediaImageOrVideo(element)
             }
         }
     }
+    //affiche soit une image soit une video
     mediaImageOrVideo(media){
         if(media.image) {
-            // console.log("image")
             let baliseImg = document.createElement("img")
             baliseImg.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ media.image)
             baliseImg.setAttribute("id", media.id)
             baliseImg.setAttribute("tabindex", "0")
             this.emplacementImageLightbox.replaceChild(baliseImg, this.emplacementImageLightbox.firstElementChild)
         }else if (media.video){  
-            console.log("video")
             let baliseVideo = document.createElement("video")
             let baliseVideoSrc = document.createElement("source")
             baliseVideo.setAttribute("controls", "")

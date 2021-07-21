@@ -6,6 +6,7 @@ class sortBy {
         this.media = document.querySelectorAll(".media")
         this.dropdown = document.querySelectorAll(".dropdown-item")
         this.dropdownBtn = document.getElementById("dropdownButton")
+        this.mediaList = document.getElementById('mediasList')
         this.displayMedias()
     }
     
@@ -16,7 +17,6 @@ class sortBy {
         let tabDate
         this.dropdown.forEach(element => {
             element.addEventListener("click", (e)=> {
-                // console.log(this.select.querySelector(".dropdown-arrow"))
                 let value = e.target.attributes["aria-label"].value
                 console.log(value)
                 if(value == "popularity"){
@@ -26,7 +26,6 @@ class sortBy {
                         return a.likes - b.likes;
                     })
                     this.changeMedias(tabPopularity.reverse())
-                    new Lightbox(this.namePhotographe, tabPopularity)
 
                 }else if (value == "date"){
                     this.dropdownBtn.innerHTML = "Date"
@@ -35,7 +34,6 @@ class sortBy {
                         return a.date.localeCompare(b.date)
                     })
                     this.changeMedias(tabDate.reverse())
-                    new Lightbox(this.namePhotographe, tabDate)
                 }else if (value == "title") {
                     this.dropdownBtn.innerHTML = "Titre"
                     //trie du tableau contenant tout les medias par titre
@@ -43,34 +41,20 @@ class sortBy {
                         return a.title.localeCompare(b.title)
                     })
                     this.changeMedias(tabTitle)
-                    new Lightbox(this.namePhotographe, tabTitle)
                 }
             })
         });
     }
 
-    //change les medias de place en fonction de la valeur choisi
+    //au changement de valeur je supprime tout les medias existant et 
+    //je recrée des medias a partir d'un tableau 
     changeMedias(tabTitle){
-        for (let index = 0; index < this.media.length; index++) {
-            let element = this.media[index];
-            element.querySelector(".media-footer_name").innerHTML= tabTitle[index].title
-            element.querySelector(".media-footer_numberLike").innerHTML= tabTitle[index].likes            
-            if(tabTitle[index].video) {
-                let baliseVideo = document.createElement("video")
-                let baliseVideoSrc = document.createElement("source")
-                baliseVideo.appendChild(baliseVideoSrc)
-                baliseVideoSrc.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ tabTitle[index].video )
-                baliseVideo.setAttribute("id", tabTitle[index].id)
-                baliseVideo.classList.add("media-header_video")
-                baliseVideo.classList.add("media-src")
-                element.querySelector(".media-header_img").replaceChild(baliseVideo, element.querySelector(".media-src"))
-            }else if(tabTitle[index].image) {
-                let baliseImage = document.createElement("img")
-                baliseImage.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ tabTitle[index].image )
-                baliseImage.setAttribute("id", tabTitle[index].id)
-                baliseImage.classList.add("media-src")
-                element.querySelector(".media-header_img").replaceChild(baliseImage, element.querySelector(".media-src"))
-            }
-        }
+        Array.from(this.mediaList.children).forEach(el => {
+            el.remove()
+        });
+        tabTitle.forEach(element => {
+            new CreateMediaCard(element, this.namePhotographe) 
+        });
+        new Lightbox(this.namePhotographe, tabTitle)
     }
 }

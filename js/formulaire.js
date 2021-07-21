@@ -45,7 +45,7 @@ class Formulaire {
                     }
                     //affichage des valeurs du form
                     console.log(data)
-
+                    console.log(this.formulaire.querySelector(".formulaire-msgConfirm"))
                     //display message confirm
                     this.formulaire.querySelector(".formulaire-msgConfirm").style.display="block"
                     setTimeout(() => {

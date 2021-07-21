@@ -9,11 +9,11 @@ class VideoMedia {
             this.integrationTextElement()
             this.rattachElementDOM()
     }
-
+    //créer les elements nécessaire pour créer la card video media
     createElementImage() {
         this.media = document.createElement('article')
         this.mediaHeader = document.createElement('header')
-        this.mediaHeaderLinkMedia = document.createElement('a')
+        this.mediaHeaderLinkMedia = document.createElement('button')
         this.mediaFooter = document.createElement('footer')
         this.mediaName = document.createElement('p')
         this.mediaNumberLike = document.createElement('p')
@@ -38,13 +38,10 @@ class VideoMedia {
 
     //Attribution des attributs aux éléments créer
     attributionAttribute(){
-        this.mediaHeaderLinkMedia.setAttribute("href", "#")
+        // this.mediaHeaderLinkMedia.setAttribute("href", "#")
         this.mediaHeaderVideoSrc.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ this.data.video)
         this.mediaHeaderVideoSrc.setAttribute("alt", this.data.alt)
         this.mediaHeaderVideo.setAttribute("id", this.data.id)
-        // this.mediaName.setAttribute("tabindex", 0)
-        // this.mediaNumberLike.setAttribute("tabindex", 0)
-        // this.mediaButtonLike.setAttribute("tabindex", 0)
     }
 
     //Integration des text dans les elements
@@ -65,15 +62,15 @@ class VideoMedia {
         this.mediaFooter.appendChild(this.mediaNumberLike)
         this.mediaFooter.appendChild(this.mediaButtonLike)
     }
-
-    createAndReplaceBaliseVideo(media, namePhotographe, elementParent, elementReplace){
-        console.log("video")
-        let baliseVideo = document.createElement("video")
-        let baliseVideoSrc = document.createElement("source")
-        baliseVideo.setAttribute("controls", "")
-        baliseVideo.setAttribute("id", media.id)
-        baliseVideoSrc.setAttribute("src", "../img/"+ namePhotographe +"/"+ media.video)
-        elementParent.replaceChild(baliseVideo, elementReplace)
-        baliseVideo.appendChild(baliseVideoSrc)
-    }
+    // //créer et remplace
+    // createAndReplaceBaliseVideo(media, namePhotographe, elementParent, elementReplace){
+    //     console.log("video")
+    //     let baliseVideo = document.createElement("video")
+    //     let baliseVideoSrc = document.createElement("source")
+    //     baliseVideo.setAttribute("controls", "")
+    //     baliseVideo.setAttribute("id", media.id)
+    //     baliseVideoSrc.setAttribute("src", "../img/"+ namePhotographe +"/"+ media.video)
+    //     elementParent.replaceChild(baliseVideo, elementReplace)
+    //     baliseVideo.appendChild(baliseVideoSrc)
+    // }
 }

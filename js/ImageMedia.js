@@ -10,11 +10,11 @@ class ImageMedia {
             this.integrationTextElement()
             this.rattachElementDOM()
     }
-
+    //Créer les elements necéssaire pour la card image
     createElementImage() {
         this.media = document.createElement('article')
         this.mediaHeader = document.createElement('header')
-        this.mediaHeaderLinkMedia = document.createElement('a')
+        this.mediaHeaderLinkMedia = document.createElement('button')
         this.mediaFooter = document.createElement('footer')
         this.mediaName = document.createElement('p')
         this.mediaNumberLike = document.createElement('p')
@@ -36,16 +36,12 @@ class ImageMedia {
 
     //Attribution des attributs aux éléments créer
     attributionAttribute(){
-        this.mediaHeaderLinkMedia.setAttribute("href", "#")
+        // this.media.setAttribute("tabindex", 0)
         this.mediaHeaderLinkMedia.setAttribute("aria-hidden", "true")
-
+        this.mediaHeaderLinkMedia.setAttribute("aria-label", this.data.alt)
         this.mediaHeaderImage.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ this.data.image)
-        // this.mediaHeaderImage.setAttribute("tabindex", "0")
         this.mediaHeaderImage.setAttribute("alt", this.data.alt)
         this.mediaHeaderImage.setAttribute("id", this.data.id)
-        // this.mediaName.setAttribute("tabindex", "0")
-        // this.mediaNumberLike.setAttribute("tabindex", "0")
-        // this.mediaButtonLike.setAttribute("tabindex", "0")
         this.mediaButtonLike .setAttribute("aria-label", "likes")
     }
 

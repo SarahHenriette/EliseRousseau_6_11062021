@@ -40,10 +40,4 @@ class CreateCardHeader {
             liSpan.appendChild(span)
         });
     }
-
-    // //Insere la photo
-    // portraitPhotograph () {
-    //     this.image.setAttribute("src" , "../img/PhotographIDPhoto/"+ this.dataPhotograph.portrait)
-    //     this.image.setAttribute("aria-label" , this.dataPhotograph.name)
-    // } 
 }

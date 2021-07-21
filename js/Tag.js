@@ -10,13 +10,13 @@ class Tag {
         this.activeOrDesactiveTags()
         this.displayOrHidePhotographsCards()
     }
-
+    //masque les cards des photographes
     deleteCardsPhotograph(){
         for(let photographCard of this.photographCards) {
             photographCard.style.display = "none"
         }
     }
-
+    //affiche ou retire la class active sur les tags
     activeOrDesactiveTags(){
         for(let tag of this.allSameTags) {
             tag.classList.toggle("active")
@@ -32,7 +32,7 @@ class Tag {
             })
         }
     }
-
+    //affiche ou masque les cards des photographe en fonction du tableau tabSelectCards
     displayOrHidePhotographsCards(){
         if(this.tabSelectCards.length === 0){
             for(let photographCard of this.photographCards) {
@@ -63,7 +63,7 @@ class Tag {
                     new Tag(tagEvent, tabSelectCards)
                 })
             }
-        //sinon si l'url contient un parametre tag alors j'affiche les cards contenant le tag
+        //sinon si l'url contient un parametre tag alors j'affiche les cards contenant le meme tag
         } else if (regTag.test(window.location.search)) {
             let tagAriaLabel = window.location.search.replace(/\?tag=/i, "")//valeur de tag
             let tabSelectCards = []

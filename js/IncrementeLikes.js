@@ -5,12 +5,12 @@
             this.btnLike = document.querySelectorAll('.media footer .media-footer_buttonLike')
             this.likes = this.likes + dataLikes
             document.querySelector('.totalLikes').innerHTML = this.likes
-            //au click du btn like j'incrémente le nbr de like de un 
             this.increment()
         }
         
 
         increment() {
+            //au click du btn like j'incrémente le nbr de like de un 
             this.btnLike.forEach(element => {
                 element.addEventListener("click", ()=> {
                     this.likes = this.likes + 1

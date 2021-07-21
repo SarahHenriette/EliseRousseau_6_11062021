@@ -4,7 +4,6 @@ let id = paramSearch.replace("?id=", "")
 let namePhotographe 
 let listMedias = []
 let likes = 0
-
 //recup des donnes json
 fetch("../data.json").then((res)=>{ 
     if (res.ok) {
@@ -45,49 +44,7 @@ fetch("../data.json").then((res)=>{
     new IncrementeLikes(likes)
 
     //lightbox
-    new Lightbox(namePhotographe, listMedias)
-    // let lightbox = document.getElementById("lightboxModal")
-    // let lightboxBtnClose = document.querySelector("#lightboxModal .lightbox-close")
-    // lightboxBtnClose.addEventListener("click", ()=>{
-    //     lightbox.style.display= "none"
-
-    // })
-
-    // let medias = document.querySelectorAll(".media-src")
-    // let imageLightbox = document.querySelector('.lightbox-media_image')
-    // function mediaImageOrVideo(media){
-    //     if(media.image) {
-    //         console.log("image")
-    //         let baliseImg = document.createElement("img")
-    //         baliseImg.setAttribute("src", "../img/"+ namePhotographe +"/"+ media.image)
-           
-    //         imageLightbox.replaceChild(baliseImg, imageLightbox.firstElementChild)
-    //     }else if (media.video){
-    //         console.log("video")
-    //         let baliseVideo = document.createElement("video")
-    //         let baliseVideoSrc = document.createElement("source")
-    //         baliseVideo.setAttribute("controls", "")
-    //         baliseVideoSrc.setAttribute("src", "../img/"+ namePhotographe +"/"+ media.video)
-           
-    //         // imageLightbox.appendChild(baliseVideo)
-    //         imageLightbox.replaceChild(baliseVideo, imageLightbox.firstElementChild)
-
-    //         baliseVideo.appendChild(baliseVideoSrc)
-    //     }
-    // }
-    // medias.forEach(media => {
-    //     media.addEventListener("click", (e)=>{
-    //         lightbox.style.display= "block"
-    //         for (let index = 0; index < listMedias.length; index++) {
-    //             const element = listMedias[index];
-    //             // console.log(element)
-    //             if(element.id == e.target.id) {
-    //                 // console.log(element)
-    //                 mediail(element)
-    //             }
-    //         }
-    //     })
-    // });
+     new Lightbox(namePhotographe, listMedias)
 }).catch((err) => {
     console.log(err)
 })
