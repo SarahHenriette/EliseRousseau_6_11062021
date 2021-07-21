@@ -315,8 +315,8 @@ a {
   z-index: 1001;
 }
 #formulaire form {
-  width: 669px;
-  min-height: 900px;
+  width: 40%;
+  min-height: 700px;
   max-height: 970px;
   border-radius: 5px;
   background-color: #DB8876;
@@ -333,7 +333,7 @@ a {
   padding: 25px;
 }
 #formulaire form .formulaire-title {
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: 400;
 }
 #formulaire form #formulaire-namePhotographe {
@@ -359,13 +359,13 @@ a {
   flex-direction: column;
 }
 #formulaire form .formData label {
-  font-size: 1.5em;
+  font-size: 1.1em;
   margin-top: 10px;
   color: #312E2E;
 }
 #formulaire form .formData input {
   border: none;
-  height: 68px;
+  height: 50px;
   border-radius: 5px;
   padding-left: 20px;
   font-size: 1em;
@@ -375,7 +375,7 @@ a {
 }
 #formulaire form .formData textarea {
   border: none;
-  height: 170px;
+  height: 130px;
   border-radius: 5px;
   padding-left: 20px;
   padding-top: 20px;
