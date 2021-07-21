@@ -50,7 +50,7 @@ class Formulaire {
                     this.formulaire.querySelector(".formulaire-msgConfirm").style.display="block"
                     setTimeout(() => {
                         this.formulaire.querySelector(".formulaire-msgConfirm").style.display="none"
-                    }, 5000);
+                    }, 10000);
                     //reset le form
                     e.target.reset()
                     const textControl = document.querySelectorAll(".text-control")
@@ -90,7 +90,7 @@ class Formulaire {
     //ouvre le formulaire au clic du btn contact me
     openForm() {
         this.btnContactMe.addEventListener("click", ()=>{
-            this.formulaire.style.display= "block"
+            this.formulaire.style.display= "flex"
             this.formulaire.setAttribute("aria-hidden", "false")
             this.main.setAttribute("aria-hidden", "true")
         })

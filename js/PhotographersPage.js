@@ -26,7 +26,7 @@ fetch("../data.json").then((res)=>{
         if(data.photographerId == parseInt(id)) {
             namePhotographe =  namePhotographe.replace("-", "").split(" ")[0]
             listMedias.push(data)
-            likes = data.likes
+            likes = likes + data.likes
         }
     }
 

@@ -1,6 +1,7 @@
    
     class IncrementeLikes{
         constructor(dataLikes) {
+            console.log(dataLikes)
             this.likes = 0
             this.btnLike = document.querySelectorAll('.media footer .media-footer_buttonLike')
             this.likes = this.likes + dataLikes
