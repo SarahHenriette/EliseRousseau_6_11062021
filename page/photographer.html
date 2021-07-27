@@ -23,16 +23,16 @@
             <button class="photographerHeader-btn btnContactMe" id="btnContactMe" aria-label="Contactez moi" >Contactez-moi</button>
             <figure class="photographerHeader-img"></figure>
         </header>
-        <div class="formulaire" id="formulaire" aria-hidden="true" role="dialog" aria-labelledby="formulaire-title">
-            <form action="">
-                <span class="formulaire-close" tabindex="0"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="formulaire" id="formulaire" aria-hidden="true" role="dialog" aria-labelledby="formulaire-title" aria-describedby="formulaire-title">
+            <form action="" role="dialog">
+                <button class="formulaire-close" tabindex="0"><svg width="42"  role="button close modal" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="white"/>
                     </svg>
-                </span>
-                <p class="formulaire-title" id="formulaire-title" tabindex="0">Contactez-moi</p>
-                <p class="formulaire-title" id="formulaire-namePhotographe"></p>
+                </button>
+                <h1 class="formulaire-title" id="formulaire-title" tabindex="0" aria-label="formulaire contactez moi">Contactez-moi</h1>
+                <p class="formulaire-title" id="formulaire-namePhotographe" tabindex="0"></p>
                 <div class="formData">
-                    <label for="prenom" id="label-prenom" tabindex="0">Prénom</label>
+                    <label for="prenom" id="label-prenom">Prénom</label>
                     <input type="text" name="prenom" id="prenom" class="text-control" aria-labelledby="label-prenom">
                     <small class="message-error">Error</small>
                 </div>
@@ -79,7 +79,7 @@
                 <button class="lightbox-close" arial-label="close dialog" ><em class="fas fa-times fa-2x"></em></button>
                 <button class="lightbox-arrow_left" arial-label="Previous image"><em class="fas fa-chevron-left fa-2x"></em></button>
                 <button class="lightbox-arrow_right" arial-label="Next image"><em class="fas fa-chevron-right fa-2x"></em></button>
-                <div class="lightbox-media_image"><img src="#"></div>
+                <div class="lightbox-media_image"><img src="#" alt="display image lightbox"></div>
                 <p class="lightbox-media_name" id="lightbox-title" tabindex="0"></p>
             </div>
         </div>

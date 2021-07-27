@@ -26,6 +26,7 @@ class Formulaire {
     //affiche le nom du photographe dans le formulaire
     formulaireName() {
         this.formulaireNamePhotograph.innerHTML = this.data
+        this.formulaireNamePhotograph.setAttribute("aria-label", this.data)
     }
     //Gére l'envoi du form
     submitForm(){
@@ -85,6 +86,11 @@ class Formulaire {
             this.formulaire.style.display= "none"
 
         })
+        document.addEventListener("keyup", (e)=> {
+            if(e.key == "Escape") {
+                this.formulaire.style.display= "none"
+            }
+        })
     }
 
     //ouvre le formulaire au clic du btn contact me
@@ -93,6 +99,8 @@ class Formulaire {
             this.formulaire.style.display= "flex"
             this.formulaire.setAttribute("aria-hidden", "false")
             this.main.setAttribute("aria-hidden", "true")
+            console.log(this.formulaire.querySelector("form"))
+            this.formulaire.querySelector("form").focus()
         })
     }
 

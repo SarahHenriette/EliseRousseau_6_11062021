@@ -11,6 +11,7 @@ class CreateCard {
         this.rattachElementDOM()
     }
 
+    //creer les element de la card
     createElementCard() {
         this.photograph = document.createElement('article')
         this.photographHeader = document.createElement('a') 
@@ -23,6 +24,8 @@ class CreateCard {
         this.photographPrice= document.createElement('p') 
         this.photographFooter = document.createElement('ul') 
     }
+
+    //ajout des class sur les élémments
     attributionClass(){
         this.photograph.classList.add("photograph")
         this.photographHeader.classList.add("photograph-header")
@@ -35,6 +38,7 @@ class CreateCard {
         this.photographFooter.classList.add("photograph-tags") 
     }
 
+    //ajout des attributs sur les éléments
     attributionAttribute(){
         this.photographHeader.setAttribute("href", "../page/photographer.html?id=" + this.dataPhotograph.id)
         this.photographHeader.setAttribute("aria-label", this.dataPhotograph.name)
@@ -42,10 +46,11 @@ class CreateCard {
         this.photographImage.setAttribute("alt", this.dataPhotograph.alt)
         this.photographName.setAttribute("tabindex", 0)
         this.photographCity.setAttribute("tabindex", 0)
-        this.photographSlogan.setAttribute("tabindex", 0)
+        this.photographSlogan.setAttribute("tabindex", 0) 
         this.photographPrice.setAttribute("tabindex", 0)
     }
 
+    //Ajout du text dans le html
     integrationTextElement(){
         this.photographName.innerHTML = this.dataPhotograph.name
         this.photographCity.innerHTML = this.dataPhotograph.city + ", " + this.dataPhotograph.country
@@ -53,6 +58,7 @@ class CreateCard {
         this.photographPrice.innerHTML = this.dataPhotograph.price + "E/jour" 
     }
 
+    //ajout des tags dans le footer de la card
     integrationTagFooter(){
         this.dataPhotograph.tags.forEach(tag => {
             let liSpan = document.createElement("li")
@@ -65,7 +71,8 @@ class CreateCard {
             liSpan.appendChild(span)
         });
     }
-
+    
+    //rattache tout les elements dans le DOM
     rattachElementDOM(){
         this.main.appendChild(this.photograph)
         this.photograph.appendChild(this.photographHeader)

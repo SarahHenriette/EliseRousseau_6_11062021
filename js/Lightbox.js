@@ -28,11 +28,6 @@ class Lightbox {
                 if(e.key === "ArrowLeft") {
                     this.changeDisplay(this.index - 1)            
                 }
-                if(e.key == "Escape") {
-                    document.querySelector("#lightboxModal .lightbox").blur()
-                    this.closeLightbox()
-                    this.media.focus()
-                }
             })
     }
     //ferme le carrousel/lightbox au click
@@ -40,12 +35,20 @@ class Lightbox {
         this.lightboxBtnClose.addEventListener("click", ()=>{
             this.closeLightbox()
         })
+        document.addEventListener("keyup", (e)=> {
+            if(e.key == "Escape") {
+                document.querySelector("#lightboxModal .lightbox").blur()
+                this.closeLightbox()
+                this.media.focus()
+            }
+        })
     }
     //actions à la fermeture de la lightbox
     closeLightbox(){
         this.lightbox.style.display= "none"
         this.main.setAttribute("aria-hidden", "false")
         this.lightbox.setAttribute("aria-hidden", "true")
+
     } 
     //Gére le bouton droite/suivant de la lightbox
     arrowNext() {

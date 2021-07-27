@@ -48,7 +48,14 @@ class Tag {
 
     //regex pour vérifier si l'url contient un parametre tag
     let regTag = /\?tag=/i 
+    // function test(e, tagEvent, tabSelectCards){
+    //     document.addEventListener("keyup", (e)=> {
+    //         if(e.key == "Escape") {
+    //             new Tag(tagEvent, tabSelectCards)
 
+    //         }
+    //     })
+    // }
     // fonctionnalité des tags.
     setTimeout(() => {
         //si l'url n'a pas de parametres alors les tags fonctionnent normalement
@@ -62,7 +69,15 @@ class Tag {
                     let tagEvent = e.target
                     new Tag(tagEvent, tabSelectCards)
                 })
+                tag.addEventListener("keyup", (e)=> {
+                    let tagEvent = e.target
+                    if(e.key == "Enter") {
+                        console.log("ok")
+                        new Tag(tagEvent, tabSelectCards)
+                    }
+                })  
             }
+            
         //sinon si l'url contient un parametre tag alors j'affiche les cards contenant le meme tag
         } else if (regTag.test(window.location.search)) {
             let tagAriaLabel = window.location.search.replace(/\?tag=/i, "")//valeur de tag
