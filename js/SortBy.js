@@ -1,6 +1,7 @@
 class sortBy {
-    constructor( listMedias, namePhotographe) {
+    constructor( listMedias, namePhotographe, likes) {
         this.listMedias =  listMedias
+        this.likes = likes
         this.namePhotographe = namePhotographe
         this.select = document.getElementById("dropdown")
         this.media = document.querySelectorAll(".media")
@@ -48,13 +49,14 @@ class sortBy {
 
     //au changement de valeur je supprime tout les medias existant et 
     //je recrée des medias a partir d'un tableau 
-    changeMedias(tabTitle){
+    changeMedias(tab){
         Array.from(this.mediaList.children).forEach(el => {
             el.remove()
         });
-        tabTitle.forEach(element => {
+        tab.forEach(element => {
             new CreateMediaCard(element, this.namePhotographe) 
         });
-        new Lightbox(this.namePhotographe, tabTitle)
+        new Lightbox(this.namePhotographe, tab)
+        new IncrementeLikes(parseInt(document.querySelector('.totalLikes').innerHTML), tab)
     }
 }

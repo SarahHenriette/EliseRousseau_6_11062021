@@ -38,10 +38,10 @@ fetch("../data.json").then((res)=>{
     }
 
     //permet de trier les media cards selon la popularité, la date ou le titre
-    new sortBy(listMedias, namePhotographe)
+    new sortBy(listMedias, namePhotographe, likes)
     
     //Gére l'indentation des likes
-    new IncrementeLikes(likes)
+    new IncrementeLikes(likes, listMedias)
 
     //lightbox
      new Lightbox(namePhotographe, listMedias)

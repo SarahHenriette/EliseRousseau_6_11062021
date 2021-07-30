@@ -11,13 +11,13 @@ class Formulaire {
         this.email= document.querySelector("#email")
         this.message= document.querySelector("#message")
         this.regexEmail=  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        this.regexMessage = /^.{10,35}$/
+        this.regexMessage = /[A-Za-z0-9,-]/
         this.regexMin = /^.{2,35}$/
         this.formulaireName()
         this.addEvent(this.firstname, this.regexMin, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
         this.addEvent(this.lastname, this.regexMin, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
         this.addEvent(this.email, this.regexEmail, "Veuillez entrer une adresse mail valide.")
-        this.addEvent(this.message, this.regexMessage, "Veuillez entrer 10 caractères ou plus pour le champ du prénom.")
+        this.addEvent(this.message, this.regexMessage, "Veuillez entrer un message")
         this.submitForm()
         this.btnClose= document.querySelector(".formulaire-close")
         this.closeForm()
@@ -75,7 +75,7 @@ class Formulaire {
                     }
                     if(this.message.value == ""){
                         let msgErreur = this.message.parentNode.childNodes[5]
-                        this.error(this.message, "Veuillez entrer 10 caractères ou plus pour le champ du prénom.", msgErreur)
+                        this.error(this.message, "Veuillez entrer un message", msgErreur)
                     }
                 }
             })
