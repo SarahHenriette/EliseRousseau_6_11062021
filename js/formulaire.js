@@ -46,7 +46,7 @@ class Formulaire {
                     }
                     //affichage des valeurs du form
                     console.log(data)
-                    console.log(this.formulaire.querySelector(".formulaire-msgConfirm"))
+
                     //display message confirm
                     this.formulaire.querySelector(".formulaire-msgConfirm").style.display="block"
                     setTimeout(() => {
@@ -89,6 +89,7 @@ class Formulaire {
         document.addEventListener("keyup", (e)=> {
             if(e.key == "Escape") {
                 this.formulaire.style.display= "none"
+                // this.btnContactMe.focus()
             }
         })
     }
@@ -99,7 +100,6 @@ class Formulaire {
             this.formulaire.style.display= "flex"
             this.formulaire.setAttribute("aria-hidden", "false")
             this.main.setAttribute("aria-hidden", "true")
-            console.log(this.formulaire.querySelector("form"))
             this.formulaire.querySelector("form").focus()
         })
     }

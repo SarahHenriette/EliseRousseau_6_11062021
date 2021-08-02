@@ -1,7 +1,6 @@
-class CreateCard {
+class CreateCardHomePage {
     constructor(data){
         this.dataPhotograph = data
-        console.log(this.dataPhotograph)
         this.main = document.querySelector(".photographsList")
         this.createElementCard()
         this.attributionClass()
@@ -94,7 +93,7 @@ fetch("../data.json").then((res)=>{
     }
 }).then(data => {
       data.photographers.forEach(dataPhotograph => {
-        new CreateCard(dataPhotograph)
+        new CreateCardHomePage(dataPhotograph)
       });
 }).catch((err) => {
     console.log(err)

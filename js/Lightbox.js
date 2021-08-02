@@ -13,55 +13,57 @@ class Lightbox {
         this.main = document.getElementById("photographer")
         this.index = 0
         this.media = ""
-            this.displayLightbox()
-            this.clickCloseLightbox()
-            this.arrowNext() 
-            this.arrowPrevious()
-            this.keyup(this.media)
+        this.displayLightbox()
+        this.arrowNext() 
+        this.arrowPrevious()
+        this.keyup(this.media)
+        this.closeLightbox()
+
     }
-    //Gère les touches du clavier (haut, fleche gauche et droite)
-    keyup(media) {
-            document.addEventListener("keyup", (e)=> {
-                if(e.key === "ArrowRight") {
-                    this.changeDisplay(this.index + 1)
-                }
-                if(e.key === "ArrowLeft") {
-                    this.changeDisplay(this.index - 1)            
-                }
-            })
-    }
-    //ferme le carrousel/lightbox au click
-    clickCloseLightbox(){
-        this.lightboxBtnClose.addEventListener("click", ()=>{
-            this.closeLightbox()
-        })
+    //Gère les touches du clavier (echappe, fleche gauche et droite)
+    keyup() {
         document.addEventListener("keyup", (e)=> {
+            if(e.key === "ArrowRight") {
+                this.changeDisplay(this.index + 1)
+            }
+            if(e.key === "ArrowLeft") {
+                this.changeDisplay(this.index - 1)            
+            }
             if(e.key == "Escape") {
-                document.querySelector("#lightboxModal .lightbox").blur()
-                this.closeLightbox()
-                this.media.focus()
+                if(this.media !== ""){
+                    document.querySelector("#lightboxModal .lightbox").blur()
+                    this.lightbox.style.display= "none"
+                    this.main.setAttribute("aria-hidden", "false")
+                    this.lightbox.setAttribute("aria-hidden", "true")
+                    // this.media.focus()
+                }
             }
         })
     }
-    //actions à la fermeture de la lightbox
-    closeLightbox(){
-        this.lightbox.style.display= "none"
-        this.main.setAttribute("aria-hidden", "false")
-        this.lightbox.setAttribute("aria-hidden", "true")
 
-    } 
+    //ferme le carrousel/lightbox 
+    closeLightbox(){
+        this.lightboxBtnClose.addEventListener("click", ()=>{
+            this.lightbox.style.display= "none"
+            this.main.setAttribute("aria-hidden", "false")
+            this.lightbox.setAttribute("aria-hidden", "true")
+        })
+    }
+
     //Gére le bouton droite/suivant de la lightbox
     arrowNext() {
         this.lightboxBtnRight.addEventListener("click", ()=> {
         this.changeDisplay(this.index + 1)
         })
     }
+
     //Gére le bouton gauche/précédent de la lightbox
     arrowPrevious() {
         this.lightboxBtnLeft.addEventListener("click", ()=> {
             this.changeDisplay(this.index - 1)
         })
     }
+
     //permet de changer le contenu de la lightbox
     changeDisplay(addition){
         if(this.media !== "") {
@@ -72,12 +74,11 @@ class Lightbox {
             if(this.index == -1){
                 this.index = this.listMedias.length-1
             }
-
             this.emplacementNameImageLightbox.innerHTML = this.listMedias[this.index].title
             this.mediaImageOrVideo(this.listMedias[this.index])
-           
         }
     }
+
     //permet d'afficher la lightbox
     displayLightbox(){
         this.mediasDisplay.forEach(media => {
@@ -92,6 +93,7 @@ class Lightbox {
             })
         });
     }
+
     //récupére le bon media parmis la liste medias et l'affiche dans la lightbox 
     displayMedia(id) {
         for (let index = 0; index < this.listMedias.length; index++) {
@@ -102,6 +104,7 @@ class Lightbox {
             }
         }
     }
+    
     //affiche soit une image soit une video
     mediaImageOrVideo(media){
         if(media.image) {

@@ -2,10 +2,9 @@ class Tag {
     constructor(tagEvent, tabSelectCards){
         this.tag = tagEvent
         this.tagAriaLabel = this.tag.attributes["aria-label"].value
-        this.tabSelectCards = tabSelectCards
-        this.main = document.querySelector("#photographsList")
-        this.photographCards = this.main.childNodes
         this.allSameTags = document.querySelectorAll('.btnTags[aria-label='+ this.tagAriaLabel +']')
+        this.photographCards = document.querySelector("#photographsList").childNodes
+        this.tabSelectCards = tabSelectCards
         this.deleteCardsPhotograph()
         this.activeOrDesactiveTags()
         this.displayOrHidePhotographsCards()
@@ -17,22 +16,25 @@ class Tag {
         }
     }
     //affiche ou retire la class active sur les tags
+    //et ajoute ou retire les cards du tableau "tabSelectCards"
     activeOrDesactiveTags(){
         for(let tag of this.allSameTags) {
             tag.classList.toggle("active")
         }
+
         if(this.tag.classList.contains("active")){
             this.allSameTags.forEach(tag => {
-                this.tabSelectCards.push(tag.parentNode.parentNode.parentNode)  
+                let cardOfTag = tag.parentNode.parentNode.parentNode
+                this.tabSelectCards.push(cardOfTag)  
             });
-            
         }else {
             this.allSameTags.forEach(tag => {
-                this.tabSelectCards.splice(this.tabSelectCards.indexOf(tag.parentNode.parentNode.parentNode),1)
+                let cardOfTag = tag.parentNode.parentNode.parentNode
+                this.tabSelectCards.splice(this.tabSelectCards.indexOf(cardOfTag),1)
             })
         }
     }
-    //affiche ou masque les cards des photographe en fonction du tableau tabSelectCards
+    //affiche ou masque les cards des photographes en fonction du tableau tabSelectCards
     displayOrHidePhotographsCards(){
         if(this.tabSelectCards.length === 0){
             for(let photographCard of this.photographCards) {
@@ -48,14 +50,6 @@ class Tag {
 
 //regex pour vérifier si l'url contient un parametre tag
 let regTag = /\?tag=/i 
-// function test(e, tagEvent, tabSelectCards){
-//     document.addEventListener("keyup", (e)=> {
-//         if(e.key == "Escape") {
-//             new Tag(tagEvent, tabSelectCards)
-
-//         }
-//     })
-// }
 
 // fonctionnalité des tags.
 setTimeout(() => {
@@ -73,12 +67,11 @@ setTimeout(() => {
             tag.addEventListener("keyup", (e)=> {
                 let tagEvent = e.target
                 if(e.key == "Enter") {
-                    console.log("ok")
                     new Tag(tagEvent, tabSelectCards)
                 }
             })  
         }
-        
+
     //sinon si l'url contient un parametre tag alors j'affiche les cards contenant le meme tag
     } else if (regTag.test(window.location.search)) {
         let tagAriaLabel = window.location.search.replace(/\?tag=/i, "")//valeur de tag
