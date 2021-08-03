@@ -84,7 +84,6 @@ class Formulaire {
     closeForm() {
         this.btnClose.addEventListener("click", ()=>{
             this.formulaire.style.display= "none"
-
         })
         document.addEventListener("keyup", (e)=> {
             if(e.key == "Escape") {

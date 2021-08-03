@@ -364,6 +364,7 @@ a {
   color: #312E2E;
 }
 #formulaire form .formData input {
+  display: block;
   border: none;
   height: 50px;
   border-radius: 5px;
@@ -387,9 +388,9 @@ a {
   border: solid 2px green;
 }
 #formulaire form .formData small {
+  display: none;
   color: red;
   font-size: 0.6em;
-  display: none;
 }
 #formulaire form input[type=submit] {
   width: 170px;
