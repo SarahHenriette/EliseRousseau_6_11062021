@@ -28,6 +28,7 @@ class Tag {
                 this.tabSelectCards.push(cardOfTag)  
             });
         }else {
+            this.tag.blur()
             this.allSameTags.forEach(tag => {
                 let cardOfTag = tag.parentNode.parentNode.parentNode
                 this.tabSelectCards.splice(this.tabSelectCards.indexOf(cardOfTag),1)

@@ -40,6 +40,7 @@ a {
   line-height: 1em;
   transition: background-color ease-in-out 0.3s;
   margin: 5px;
+  background-color: white;
   cursor: pointer;
 }
 .btnTags:hover, .btnTags:focus {

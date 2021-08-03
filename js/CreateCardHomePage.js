@@ -88,6 +88,8 @@ class CreateCardHomePage {
 
 //recup des donnes json
 fetch("../data.json").then((res)=>{ 
+    //vérifie le statut de la requete
+    //si c'est ok je renvoie la réponse en tant qu'objet JSON
     if (res.ok) {
         return res.json()
     }

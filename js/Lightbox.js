@@ -82,7 +82,7 @@ class Lightbox {
     //permet d'afficher la lightbox
     displayLightbox(){
         this.mediasDisplay.forEach(media => {
-            media.parentElement.addEventListener("click", (e)=>{
+            media.parentElement.addEventListener("click", ()=>{
                 media.parentElement.blur()//enleve le focus du media
                 this.lightbox.style.display= "block"
                 document.querySelector("#lightboxModal .lightbox").focus()//met le focus sur la lightbox
