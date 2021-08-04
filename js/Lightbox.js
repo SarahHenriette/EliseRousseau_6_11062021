@@ -6,8 +6,7 @@ class Lightbox {
         this.lightboxBtnClose = document.querySelector("#lightboxModal .lightbox-close")
         this.lightboxBtnLeft = document.querySelector("#lightboxModal .lightbox-arrow_left")
         this.lightboxBtnRight = document.querySelector("#lightboxModal .lightbox-arrow_right")
-        this.mediasDisplay = document.querySelectorAll(".media-src")
-        this.mediasLink = document.querySelectorAll(".media-header_img")
+        this.listMediasDOM = document.querySelectorAll(".media-src")
         this.emplacementImageLightbox = document.querySelector('.lightbox-media_image')
         this.emplacementNameImageLightbox = document.querySelector('.lightbox-media_name')
         this.main = document.getElementById("photographer")
@@ -81,26 +80,28 @@ class Lightbox {
 
     //permet d'afficher la lightbox
     displayLightbox(){
-        this.mediasDisplay.forEach(media => {
-            media.parentElement.addEventListener("click", ()=>{
-                media.parentElement.blur()//enleve le focus du media
+        this.listMediasDOM.forEach(media => {
+            let btn = media.parentElement
+            btn.addEventListener("click", ()=>{
+                btn.blur()//enleve le focus du media
                 this.lightbox.style.display= "block"
                 document.querySelector("#lightboxModal .lightbox").focus()//met le focus sur la lightbox
                 this.main.setAttribute("aria-hidden", "true")
                 this.lightbox.setAttribute("aria-hidden", "false")
-                this.media = media.parentElement
-                this.displayMedia(this.media.firstElementChild.id)//affiche l'image ou la video 
+                this.media = btn
+                this.displayMedia(media.id)//affiche l'image ou la video 
             })
         });
     }
 
-    //récupére le bon media parmis la liste medias et l'affiche dans la lightbox 
+    //Grâce au ID je récupére le bon media parmis la liste medias et l'affiche dans la lightbox 
     displayMedia(id) {
         for (let index = 0; index < this.listMedias.length; index++) {
             const element = this.listMedias[index];
             if(element.id == id) {
                 this.index= index
                 this.mediaImageOrVideo(element)
+                this.emplacementNameImageLightbox.innerHTML = element.title
             }
         }
     }

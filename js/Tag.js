@@ -1,10 +1,10 @@
 class Tag {
-    constructor(tagEvent, tabSelectCards){
+    constructor(tagEvent, tabCardsFilter){
         this.tag = tagEvent
         this.tagAriaLabel = this.tag.attributes["aria-label"].value
         this.allSameTags = document.querySelectorAll('.btnTags[aria-label='+ this.tagAriaLabel +']')
         this.photographCards = document.querySelector("#photographsList").childNodes
-        this.tabSelectCards = tabSelectCards
+        this.tabCardsFilter = tabCardsFilter
         this.deleteCardsPhotograph()
         this.activeOrDesactiveTags()
         this.displayOrHidePhotographsCards()
@@ -16,7 +16,7 @@ class Tag {
         }
     }
     //affiche ou retire la class active sur les tags
-    //et ajoute ou retire les cards du tableau "tabSelectCards"
+    //et ajoute ou retire les cards du tableau "tabCardsFilter"
     activeOrDesactiveTags(){
         for(let tag of this.allSameTags) {
             tag.classList.toggle("active")
@@ -25,24 +25,24 @@ class Tag {
         if(this.tag.classList.contains("active")){
             this.allSameTags.forEach(tag => {
                 let cardOfTag = tag.parentNode.parentNode.parentNode
-                this.tabSelectCards.push(cardOfTag)  
+                this.tabCardsFilter.push(cardOfTag)  
             });
         }else {
             this.tag.blur()
             this.allSameTags.forEach(tag => {
                 let cardOfTag = tag.parentNode.parentNode.parentNode
-                this.tabSelectCards.splice(this.tabSelectCards.indexOf(cardOfTag),1)
+                this.tabCardsFilter.splice(this.tabCardsFilter.indexOf(cardOfTag),1)
             })
         }
     }
-    //affiche ou masque les cards des photographes en fonction du tableau tabSelectCards
+    //affiche ou masque les cards des photographes en fonction du tableau tabCardsFilter
     displayOrHidePhotographsCards(){
-        if(this.tabSelectCards.length === 0){
+        if(this.tabCardsFilter.length === 0){
             for(let photographCard of this.photographCards) {
                 photographCard.style.display = "flex"
             }
         }else {
-            for(let el of this.tabSelectCards) {
+            for(let el of this.tabCardsFilter) {
                 el.style.display = "flex"
             }
         }        
@@ -57,18 +57,18 @@ setTimeout(() => {
     //si l'url n'a pas de parametres alors les tags fonctionnent normalement
     if(window.location.search == ""){
         let tagsAll = document.querySelectorAll(".btnTags")
-        let tabSelectCards = []
+        let tabCardsFilter = []
         for (let index = 0; index < tagsAll.length; index++) {
             let tag = tagsAll[index];
             // Au click d'un tag j'affiche les photographes ayant ce même tag 
             tag.addEventListener("click", (e)=> {
                 let tagEvent = e.target
-                new Tag(tagEvent, tabSelectCards)
+                new Tag(tagEvent, tabCardsFilter)
             })
             tag.addEventListener("keyup", (e)=> {
                 let tagEvent = e.target
                 if(e.key == "Enter") {
-                    new Tag(tagEvent, tabSelectCards)
+                    new Tag(tagEvent, tabCardsFilter)
                 }
             })  
         }
@@ -76,8 +76,8 @@ setTimeout(() => {
     //sinon si l'url contient un parametre tag alors j'affiche les cards contenant le meme tag
     } else if (regTag.test(window.location.search)) {
         let tagAriaLabel = window.location.search.replace(/\?tag=/i, "")//valeur de tag
-        let tabSelectCards = []
+        let tabCardsFilter = []
         let tag = document.querySelector('.btnTags[aria-label="'+ tagAriaLabel +'"]')
-        new Tag(tag, tabSelectCards)
+        new Tag(tag, tabCardsFilter)
     }
 }, 300);

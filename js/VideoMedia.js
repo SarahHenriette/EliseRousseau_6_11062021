@@ -62,15 +62,4 @@ class VideoMedia {
         this.mediaFooter.appendChild(this.mediaNumberLike)
         this.mediaFooter.appendChild(this.mediaButtonLike)
     }
-    // //créer et remplace
-    // createAndReplaceBaliseVideo(media, namePhotographe, elementParent, elementReplace){
-    //     console.log("video")
-    //     let baliseVideo = document.createElement("video")
-    //     let baliseVideoSrc = document.createElement("source")
-    //     baliseVideo.setAttribute("controls", "")
-    //     baliseVideo.setAttribute("id", media.id)
-    //     baliseVideoSrc.setAttribute("src", "../img/"+ namePhotographe +"/"+ media.video)
-    //     elementParent.replaceChild(baliseVideo, elementReplace)
-    //     baliseVideo.appendChild(baliseVideoSrc)
-    // }
 }

@@ -1,6 +1,5 @@
 class Tag {
     constructor(tagEvent, tabSelectCards){
-        console.log(tagEvent)
         this.tag = tagEvent
         this.tabSelectCards = tabSelectCards
         this.main = document.querySelector("#photographsList")

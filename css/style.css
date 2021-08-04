@@ -295,6 +295,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

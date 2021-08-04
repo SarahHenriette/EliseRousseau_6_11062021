@@ -13,7 +13,6 @@ fetch("../data.json").then((res)=>{
     //recup infos photograph
     for(let data of datas.photographers){
         if(data.id == parseInt(id)) {
-            // console.log(data)
             new CreateCardHeader(data)
             namePhotographe = data.name
             new Formulaire(data.name)
@@ -32,7 +31,7 @@ fetch("../data.json").then((res)=>{
 
     //créer les medias cards
     for(let media of listMedias.sort((a, b)=>{
-        return a.likes - b.likes; //trie le tableau selon la popumarité
+        return a.likes - b.likes; //trie le tableau selon la popularité
     }).reverse()) {
         new CreateMediaCard(media, namePhotographe) 
     }
