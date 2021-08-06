@@ -51,10 +51,10 @@ class CreateCardHomePage {
 
     //Ajout du text dans le html
     integrationTextElement(){
-        this.photographName.innerHTML = this.dataPhotograph.name
-        this.photographCity.innerHTML = this.dataPhotograph.city + ", " + this.dataPhotograph.country
-        this.photographSlogan.innerHTML = this.dataPhotograph.tagline
-        this.photographPrice.innerHTML = this.dataPhotograph.price + "E/jour" 
+        this.photographName.textContent = this.dataPhotograph.name
+        this.photographCity.textContent = this.dataPhotograph.city + ", " + this.dataPhotograph.country
+        this.photographSlogan.textContent = this.dataPhotograph.tagline
+        this.photographPrice.textContent = this.dataPhotograph.price + "E/jour" 
     }
 
     //ajout des tags dans le footer de la card
