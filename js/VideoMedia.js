@@ -38,7 +38,9 @@ class VideoMedia {
 
     //Attribution des attributs aux éléments créer
     attributionAttribute(){
-        // this.mediaHeaderLinkMedia.setAttribute("href", "#")
+        this.media.setAttribute("tabindex", 0)
+        this.media.setAttribute("aria-label", "article")
+        this.mediaHeaderLinkMedia.setAttribute("aria-label", this.data.alt)
         this.mediaHeaderVideoSrc.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ this.data.video)
         this.mediaHeaderVideoSrc.setAttribute("alt", this.data.alt)
         this.mediaHeaderVideo.setAttribute("id", this.data.id)

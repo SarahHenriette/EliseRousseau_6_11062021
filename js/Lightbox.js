@@ -111,6 +111,7 @@ class Lightbox {
         if(media.image) {
             let baliseImg = document.createElement("img")
             baliseImg.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ media.image)
+            baliseImg.setAttribute("alt", media.alt)
             baliseImg.setAttribute("id", media.id)
             baliseImg.setAttribute("tabindex", "0")
             this.emplacementImageLightbox.replaceChild(baliseImg, this.emplacementImageLightbox.firstElementChild)
@@ -119,6 +120,7 @@ class Lightbox {
             let baliseVideoSrc = document.createElement("source")
             baliseVideo.setAttribute("controls", "")
             baliseVideoSrc.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ media.video)
+            baliseVideoSrc.setAttribute("alt", media.alt)
             this.emplacementImageLightbox.replaceChild(baliseVideo, this.emplacementImageLightbox.firstElementChild)
             baliseVideo.appendChild(baliseVideoSrc)
         }

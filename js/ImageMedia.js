@@ -36,13 +36,13 @@ class ImageMedia {
 
     //Attribution des attributs aux éléments créer
     attributionAttribute(){
-        // this.media.setAttribute("tabindex", 0)
-        this.mediaHeaderLinkMedia.setAttribute("aria-hidden", "true")
+        this.media.setAttribute("tabindex", 0)
+        this.media.setAttribute("aria-label", "article")
         this.mediaHeaderLinkMedia.setAttribute("aria-label", this.data.alt)
         this.mediaHeaderImage.setAttribute("src", "../img/"+ this.namePhotographe +"/"+ this.data.image)
         this.mediaHeaderImage.setAttribute("alt", this.data.alt)
         this.mediaHeaderImage.setAttribute("id", this.data.id)
-        this.mediaButtonLike .setAttribute("aria-label", "likes")
+        this.mediaButtonLike.setAttribute("aria-label", "likes")
     }
 
     //Integration des text dans les elements
