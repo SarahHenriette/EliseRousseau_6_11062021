@@ -60,7 +60,6 @@ class CreateCardHomePage {
     //ajout des tags dans le footer de la card
     integrationTagFooter(){
         this.dataPhotograph.tags.forEach(tag => {
-            console.log(tag)
             let liSpan = document.createElement("li")
             let span = document.createElement("span")
             span.setAttribute("aria-label", tag)
