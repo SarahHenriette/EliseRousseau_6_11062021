@@ -86,8 +86,8 @@ class Lightbox {
                 btn.blur()//enleve le focus du media
                 this.lightbox.style.display= "block"
                 document.querySelector("#lightboxModal .lightbox").focus()//met le focus sur la lightbox
-                this.main.setAttribute("aria-hidden", "true")
-                this.lightbox.setAttribute("aria-hidden", "false")
+                // this.main.setAttribute("aria-hidden", "true")
+                // this.lightbox.setAttribute("aria-hidden", "false")
                 this.media = btn
                 this.displayMedia(media.id)//affiche l'image ou la video 
             })
