@@ -13,5 +13,5 @@ Le but de ce projet a été de créer un site accessible
 - SASS
 - HTML
 
-# Démo :
-https://game-on-website-fr-two.vercel.app/
+# Use : 
+Live Serve
