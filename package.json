@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch sass/style.scss:css/style.css",
-    "build": "webpack",
+    "build": "npm run build",
     "start": "webpack serve"
   },
   "repository": {
@@ -22,7 +22,5 @@
     "eslint": "^7.28.0",
     "webpack-dev-server": "^3.11.2"
   },
-  "dependencies": {
-    "webpack": "^5.69.1"
-  }
+  "dependencies": {}
 }
